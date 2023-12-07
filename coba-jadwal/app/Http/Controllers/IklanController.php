@@ -80,7 +80,9 @@ class IklanController extends Controller
                 'link' => $request->link,
                 'status' => $request->status,
             ]);
-            return redirect()->route('iklan.index')->with('success', 'Data Berhasil DiUpdaate');
+
+            Alert::warning('Success', 'Data Berhasil Diupdate');
+            return redirect()->route('iklan.index');
         } else {
             $iklan = Iklan::find($id);
             Storage::delete($iklan->gambar_iklan);
@@ -91,7 +93,7 @@ class IklanController extends Controller
                 'gambar_iklan' => $request->file('gambar_iklan')->store('iklan'),
             ]);
 
-            Alert::success('Success', 'Data Berhasil Diupdate');
+            Alert::warning('Success', 'Data Berhasil Diupdate');
             return redirect()->route('iklan.index');
         }
     }
@@ -107,7 +109,7 @@ class IklanController extends Controller
 
         $iklan->delete();
 
-        Alert::success('Success', 'Data Berhasil Dihapus');
+        Alert::error('Success', 'Data Berhasil Dihapus');
         return redirect()->route('iklan.index');
     }
 }

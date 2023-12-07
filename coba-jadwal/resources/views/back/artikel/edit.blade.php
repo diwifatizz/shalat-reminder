@@ -29,7 +29,7 @@
                         </div>
                         <div class="form-group">
                             <label for="body">Body</label>
-                            <textarea name="body" id="editor1" class="form-control">{{ $artikel->body}}</textarea>
+                            <textarea name="body" id="editor" class="form-control">{{ $artikel->body}}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="kategori">Kategori </label>
@@ -77,7 +77,15 @@
 <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 
 <script>
-    CKEDITOR.replace('editor1');
+    var options = {
+      filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+      filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+      filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+      filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+    };
+  </script>
+<script>
+    CKEDITOR.replace('editor', options);
 </script>
 
 @endsection

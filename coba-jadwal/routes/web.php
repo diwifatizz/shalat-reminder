@@ -48,3 +48,10 @@ Route::resource('slide', SlideController::class);
 Route::resource('iklan', IklanController::class);
 
 Route::resource('jadwal', JadwalController::class);
+
+
+//route untuk file manage di dalam views-back-artikel-(create dan edit)
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
