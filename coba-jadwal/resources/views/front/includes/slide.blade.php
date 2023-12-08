@@ -2,12 +2,12 @@
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
 
-     @foreach ($slide as $key => $row)
+     {{-- @foreach ($slide as $key => $row)
      <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
       <img src="{{ asset('uploads/'. $row->gambar_slide ) }}" style="height:600px" class="d-block w-100" alt="...">
     </div>
  
-     @endforeach
+     @endforeach --}}
      
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>

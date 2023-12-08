@@ -50,7 +50,7 @@
                                     <td>{{ $row -> users->name }}</td>
                                     <td> <img src="{{ asset('uploads/'. $row->gambar_artikel) }}" alt="" width="150"></td>
                                     <td>
-                                        <a href="{{ route ('artikel.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-pencil"></i> Edit</a>
+                                        <a href="{{ route ('artikel.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-pen"></i></a>
 
                                         <form action="{{ route ('artikel.destroy', $row->id) }}" method="POST" class="d-inline">
                                         @csrf

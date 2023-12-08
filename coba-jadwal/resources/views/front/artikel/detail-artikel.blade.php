@@ -32,7 +32,7 @@
             </div>
 
             <div class="detail-sidebar-kategori">
-                <h4 class="mt-4">kategori berita</h4>
+                <h4 class="mt-4">Kategori Berita</h4>
                 <hr>
                 @foreach ($category as $row)
                     
@@ -46,32 +46,19 @@
                     <p class="ml-auto text-right"><span class="badge badge-dark">{{ $row->artikel->count() }}</span></p>
 
                 </div>
-                {{-- <div class="sidebar-kategori d-flex flex-wrap">
-                    <a href="" style="text-decoration:none;">
-
-                        <p>umum</p>
-
-                    </a>
-                    <p class="ml-auto text-right"><span class="badge badge-dark">7</span></p>
-
-                </div> --}}
                 @endforeach
             </div>
 
             <div class="detail-sidebar-artikel">
-                <h4 class="mt-4">Artikel terbaru</h4>
+                <h4 class="mt-4">Artikel Terbaru</h4>
                 <hr>
                 @foreach ($postinganTerbaru as $row)
-                    
-              
                 <div class="media mt-4">
-
                     <img src="{{ asset('uploads/'. $row->gambar_artikel) }}" width="70px" class="mr-3" alt="">
                     <div class="media-box">
                         <h6 class="mt-0">
                             {{ $row->judul }}
                         </h6>
-
                     </div>
                 </div>
                 @endforeach

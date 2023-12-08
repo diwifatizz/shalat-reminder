@@ -59,14 +59,14 @@
                 <li class="nav-item">
                     <a href="{{ route('slide.index') }}">
                         <i class="fas fa-image"></i>
-                        <p>slide banner</p>
+                        <p>Slide Banner</p>
                     </a>
                 </li>
     
                 <li class="nav-item">
                     <a href="{{ route('iklan.index') }}">
                         <i class="fas fa-link  "></i>
-                        <p>iklan</p>
+                        <p>Iklan</p>
                     </a>
                 </li>
                 @if (Auth::user()->level == 'admin')
@@ -74,7 +74,7 @@
                <li class="nav-item">
                 <a href="{{ route('kategori.index') }}">
                     <i class="fas fa-desktop"></i>
-                    <p>kategori</p>
+                    <p>Kategori</p>
                 </a>
                </li>
 
