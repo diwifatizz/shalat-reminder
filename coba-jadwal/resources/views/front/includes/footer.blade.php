@@ -31,42 +31,38 @@
           </div>
       </div>
       <div class="col-lg-6 col-xl-3">
-          <div class="footer-item-2">
-              <div class="d-flex flex-column mb-4">
-                  <h4 class="mb-4 text-white">Recent Posts</h4>
-                  <a href="#">
-                      <div class="d-flex align-items-center">
-                          <div class="rounded-circle border border-2 border-primary overflow-hidden">
-                              <img src="{{ asset('front/img/footer-1.jpg') }}" class="img-zoomin img-fluid rounded-circle w-100" alt="">
-                          </div>
-                          <div class="d-flex flex-column ps-4">
-                              <p class="text-uppercase text-white mb-3">Life Style</p>
-                              <a href="#" class="h6 text-white">
-                                  Get the best speak market, news.
-                              </a>
-                              <small class="text-white d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9, 2024</small>
-                          </div>
-                      </div>
-                  </a>
-              </div>
-              <div class="d-flex flex-column">
-                  <a href="#">
-                      <div class="d-flex align-items-center">
-                          <div class="rounded-circle border border-2 border-primary overflow-hidden">
-                              <img src="{{ asset('front/img/footer-2.jpg') }}" class="img-zoominimg-fluid rounded-circle w-100" alt="">
-                          </div>
-                          <div class="d-flex flex-column ps-4">
-                              <p class="text-uppercase text-white mb-3">Sports</p>
-                              <a href="#" class="h6 text-white">
-                                  Get the best speak market, news.
-                              </a>
-                              <small class="text-white d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9, 2024</small>
-                          </div>
-                      </div>
-                  </a>
-              </div>
-          </div>
-      </div>
+        <div class="footer-item-2">
+            <div class="d-flex flex-column mb-4">
+                <h4 class="mb-4 text-white">Recent Posts</h4>
+                <a href="#">
+                    @php $count = 0; @endphp
+                    @forelse ($artikel as $row)
+                        @if ($count < 2)
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-circle border border-2 border-primary overflow-hidden" style="width: 50px; height: 50px;">
+                                    <img src="{{ asset('uploads/'. $row->gambar_artikel) }}" class="img-zoomin img-fluid rounded-circle w-100" alt="" style="object-fit: cover; width: 100%; height: 100%;">
+                                </div>
+                                <div class="d-flex flex-column ps-4">
+                                    <p class="text-uppercase text-white mb-3">{{ $row->kategori->nama_kategori }}</p>
+                                    <a href="{{ route('detail-artikel', $row->slug) }}" class="h6 text-white">
+                                        {{ $row->judul }}
+                                    </a>
+                                    <small class="text-white d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9, 2024</small>
+                                </div>
+                            </div>
+                            @php $count++; @endphp
+                        @else
+                            @break
+                        @endif
+                    @empty
+                        <p>Tidak ada Artikel</p>
+                    @endforelse
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
       <div class="col-lg-6 col-xl-3">
         <div class="d-flex flex-column text-start footer-item-3">
             <h4 class="mb-4 text-white">Categories</h4>

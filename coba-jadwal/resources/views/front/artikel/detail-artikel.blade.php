@@ -2,6 +2,8 @@
 
 @section('content')
 
+@include('front.includes.slide')
+
 <div class="container">
     <div class="row">
         <div class="col lg-8 mt-4">

@@ -1,4 +1,4 @@
-<div class="container-fluid topbar bg-dark d-none d-lg-block">
+{{-- <div class="container-fluid topbar bg-dark d-none d-lg-block">
   <div class="container px-0">
       <div class="topbar-top d-flex justify-content-between flex-lg-wrap">
           <div class="top-info flex-grow-0">
@@ -30,13 +30,13 @@
           </div>
       </div>
   </div>
-</div>
+</div> --}}
 <div class="container-fluid bg-light">
   <div class="container px-0">
       <nav class="navbar navbar-light navbar-expand-xl">
           <a href="index.html" class="navbar-brand mt-3">
               <p class="text-primary display-6 mb-4" style="line-height: 0;">JadwalShalat</p>
-              <small class="text-body fw-normal" style="letter-spacing: 2px;">Jadwal Waktu Sholat-Jadwal Shalat</small>
+              <small class="text-body fw-normal" style="letter-spacing: 2px;">Shalat Reminder</small>
           </a>
           <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
               <span class="fa fa-bars text-primary"></span>
@@ -44,17 +44,17 @@
           <div class="collapse navbar-collapse bg-light py-3" id="navbarCollapse">
               <div class="navbar-nav mx-auto border-top">
                   <a href="/" class="nav-item nav-link active">Home</a>
-                  <a href="detail-artikel.blade.php" class="nav-item nav-link">Artikel</a>
-                  <a href="#" class="nav-item nav-link">Asmaul Husna</a>
+                  <a href="{{ route('detail.page') }}" class="nav-item nav-link">Artikel</a>
+                <a href="#" class="nav-item nav-link">Asmaul Husna</a>
                   <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Kategori</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      @foreach ($category as $cat)
+                    @foreach ($category as $cat)
                       <a class="dropdown-item" href="{{ $cat->slug }}">{{ $cat->nama_kategori }}</a>
-                      @endforeach
+                    @endforeach
                     </div>
                 </div>
-                  <a href="#" class="nav-item nav-link">Contact Us</a>
+                  <a href="{{ route('kontak') }}" class="nav-item nav-link">Contact Us</a>
               </div>
               <div class="d-flex flex-nowrap border-top pt-3 pt-xl-0">
                   <div class="d-flex">

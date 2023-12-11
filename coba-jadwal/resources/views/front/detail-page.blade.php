@@ -2,24 +2,22 @@
 
 @section('content')
 
-@include('front.includes.slide')
-
  
  <!-- Single Product Start -->
  <div class="container-fluid py-5">
     <div class="container py-5">
-        <ol class="breadcrumb justify-content-start mb-4">
+        {{-- <ol class="breadcrumb justify-content-start mb-4">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
             <li class="breadcrumb-item"><a href="#">Pages</a></li>
             <li class="breadcrumb-item active text-dark">Single Page</li>
-        </ol>
+        </ol> --}}
         <div class="row g-4">
             <div class="col-lg-8">
                 <div class="mb-4">
                     <a href="#" class="h1 display-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a>
                 </div>
                 <div class="position-relative rounded overflow-hidden mb-3">
-                    <img src="img/news-1.jpg" class="img-zoomin img-fluid rounded w-100" alt="">
+                    <img src="{{ asset ('front/img/news-1.jpg') }}" class="img-zoomin img-fluid rounded w-100" alt="">
                     <div class="position-absolute text-white px-4 py-2 bg-primary rounded" style="top: 20px; right: 20px;">                                              
                         Busimess
                     </div>
@@ -33,10 +31,6 @@
                 <p class="my-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                 </p>
-                <p class="my-4">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
                 </p>
                 <div class="bg-light p-4 mb-4 rounded border-start border-3 border-primary">
                     <h1 class="mb-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h1>
@@ -44,12 +38,12 @@
                 <div class="row g-4">
                     <div class="col-6">
                         <div class="rounded overflow-hidden">
-                            <img src="img/news-6.jpg" class="img-zoomin img-fluid rounded w-100" alt="">
+                            <img src="{{ asset ('front/img/news-6.jpg') }}" class="img-zoomin img-fluid rounded w-100" alt="">
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="rounded overflow-hidden">
-                            <img src="img/news-5.jpg" class="img-zoomin img-fluid rounded w-100" alt="">
+                            <img src="{{ asset ('front/img/news-5.jpg') }}" class="img-zoomin img-fluid rounded w-100" alt="">
                         </div>
                     </div>
                 </div>
@@ -108,7 +102,7 @@
                         <div id="tab-1" class="tab-pane fade show active">
                             <div class="row g-4 align-items-center">
                                 <div class="col-3">
-                                    <img src="img/footer-4.jpg" class="img-fluid w-100 rounded" alt="">
+                                    <img src="{{ asset ('front/img/footer-4.jpg') }}" class="img-fluid w-100 rounded" alt="">
                                 </div>
                                 <div class="col-9">
                                     <h3>Amelia Alex</h3>
@@ -121,7 +115,7 @@
                         <div id="tab-2" class="tab-pane fade show">
                             <div class="row g-4 align-items-center">
                                 <div class="col-3">
-                                    <img src="img/footer-5.jpg" class="img-fluid w-100 rounded" alt="">
+                                    <img src="{{ asset ('front/img/footer-5.jpg') }}" class="img-fluid w-100 rounded" alt="">
                                 </div>
                                 <div class="col-9">
                                     <h3>Amelia Alex</h3>
@@ -134,7 +128,7 @@
                         <div id="tab-3" class="tab-pane fade show">
                             <div class="row g-4 align-items-center">
                                 <div class="col-3">
-                                    <img src="img/footer-6.jpg" class="img-fluid w-100 rounded" alt="">
+                                    <img src="{{ asset ('front/img/footer-6.jpg') }}" class="img-fluid w-100 rounded" alt="">
                                 </div>
                                 <div class="col-9">
                                     <h3>Amelia Alex</h3>
@@ -151,7 +145,7 @@
                     <div class="row g-4">
                         <div class="col-lg-6">
                             <div class="d-flex align-items-center p-3 bg-white rounded">
-                                <img src="img/chatGPT.jpg" class="img-fluid rounded" alt="">
+                                <img src="{{ asset ('front/img/chatGPT.jpg') }}" class="img-fluid rounded" alt="">
                                 <div class="ms-3">
                                     <a href="#" class="h5 mb-2">Lorem Ipsum is simply dummy text of the printing</a>
                                     <p class="text-dark mt-3 mb-0 me-3"><i class="fa fa-clock"></i> 06 minute read</p>
@@ -160,7 +154,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="d-flex align-items-center p-3 bg-white rounded">
-                                <img src="img/chatGPT-1.jpg" class="img-fluid rounded" alt="">
+                                <img src="{{ asset ('front/img/chatGPT-1.jpg') }}" class="img-fluid rounded" alt="">
                                 <div class="ms-3">
                                     <a href="#" class="h5 mb-2">Lorem Ipsum is simply dummy text of the printing</a>
                                     <p class="text-dark mt-3 mb-0 me-3"><i class="fa fa-clock"></i> 06 minute read</p>
@@ -174,7 +168,7 @@
                     <div class="p-4 bg-white rounded mb-4">
                         <div class="row g-4">
                             <div class="col-3">
-                                <img src="img/footer-4.jpg" class="img-fluid rounded-circle w-100" alt="">
+                                <img src="{{ asset ('front/img/footer-4.jpg') }}" class="img-fluid rounded-circle w-100" alt="">
                             </div>
                             <div class="col-9">
                                 <div class="d-flex justify-content-between">
@@ -190,7 +184,7 @@
                     <div class="p-4 bg-white rounded mb-0">
                         <div class="row g-4">
                             <div class="col-3">
-                                <img src="img/footer-4.jpg" class="img-fluid rounded-circle w-100" alt="">
+                                <img src="{{ asset ('front/img/footer-4.jpg') }}" class="img-fluid rounded-circle w-100" alt="">
                             </div>
                             <div class="col-9">
                                 <div class="d-flex justify-content-between">
@@ -301,7 +295,7 @@
                                         <div class="col-4">
                                             <div class="rounded-circle position-relative">
                                                 <div class="overflow-hidden rounded-circle">
-                                                    <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                                    <img src="{{ asset ('front/img/features-sports-1.jpg') }}" class="img-zoomin img-fluid rounded-circle w-100" alt="">
                                                 </div>
                                                 <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
                                             </div>
@@ -322,7 +316,7 @@
                                         <div class="col-4">
                                             <div class="rounded-circle position-relative">
                                                 <div class="overflow-hidden rounded-circle">
-                                                    <img src="img/features-technology.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                                    <img src="{{ asset ('front/img/features-technology.jpg') }}" class="img-zoomin img-fluid rounded-circle w-100" alt="">
                                                 </div>
                                                 <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
                                             </div>
@@ -343,7 +337,7 @@
                                         <div class="col-4">
                                             <div class="rounded-circle position-relative">
                                                 <div class="overflow-hidden rounded-circle">
-                                                    <img src="img/features-fashion.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                                    <img src="{{ asset ('front/img/features-fashion.jpg') }}" class="img-zoomin img-fluid rounded-circle w-100" alt="">
                                                 </div>
                                                 <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
                                             </div>
@@ -364,7 +358,7 @@
                                         <div class="col-4">
                                             <div class="rounded-circle position-relative">
                                                 <div class="overflow-hidden rounded-circle">
-                                                    <img src="img/features-life-style.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                                    <img src="{{ asset ('front/img/features-life-style.jpg ') }}"class="img-zoomin img-fluid rounded-circle w-100" alt="">
                                                 </div>
                                                 <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
                                             </div>
@@ -432,7 +426,7 @@
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="position-relative banner-2">
-                                        <img src="img/banner-2.jpg" class="img-fluid w-100 rounded" alt="">
+                                        <img src="{{ asset ('front/img/banner-2.jpg') }}" class="img-fluid w-100 rounded" alt="">
                                         <div class="text-center banner-content-2">
                                             <h6 class="mb-2">The Most Populer</h6>
                                             <p class="text-white mb-2">News & Magazine WP Theme</p>
@@ -449,4 +443,5 @@
     </div>
 </div>
 <!-- Single Product End -->
+
 @endsection

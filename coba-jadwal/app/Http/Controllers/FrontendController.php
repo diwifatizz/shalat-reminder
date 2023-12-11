@@ -25,7 +25,7 @@ class FrontendController extends Controller
 
     public function detail($slug)
     {
-        $artikel = Artikel::where('slug', $slug)->first();
+        $artikel = Artikel::where('slug', $slug)->firstOrFail();
         $category = kategori::all();
         $iklanA = Iklan::where('id', '1')->first();
         $postinganTerbaru = Artikel::orderBy('created_at', 'DESC')->limit('5')->get();
@@ -35,6 +35,32 @@ class FrontendController extends Controller
             'category' => $category,
             'iklanA' => $iklanA,
             'postinganTerbaru' => $postinganTerbaru
+        ]);
+    }
+
+    public function article()
+    {
+        $category = kategori::all();
+        $artikel = Artikel::all();
+        $slide = Slide::all();
+        
+        return view('front.detail-page', [
+            'category' => $category,
+            'artikel' => $artikel,
+            'slide' => $slide
+        ]);
+    }
+
+    public function kontak()
+    {
+        $category = kategori::all();
+        $artikel = Artikel::all();
+        $slide = Slide::all();
+
+        return view('front.kontak', [
+            'category' => $category,
+            'artikel' => $artikel,
+            'slide' => $slide
         ]);
     }
 }
