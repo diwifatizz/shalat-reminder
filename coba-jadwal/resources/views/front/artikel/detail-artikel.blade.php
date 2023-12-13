@@ -2,7 +2,8 @@
 
 @section('content')
 
-@include('front.includes.js')
+    @include('front.includes.js')
+
     <!-- Single Product Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
@@ -40,11 +41,11 @@
                                 </div>
                             </div>
                         </div>
-                    
-                    <p class="my-4" style="text-align: justify;">{!! $artikel->body !!}</p>
-                    <script>
+
+                        <p class="my-4" style="text-align: justify;">{!! $artikel->body !!}</p>
+                        <script>
                         bwstoc();
-                    </script>
+                        </script>
                     </div>
                 </div>
 
@@ -67,6 +68,34 @@
                                             <a href="{{ $iklanA->link }}" class="btn btn-primary text-white px-4">Shop Now</a>
                                         </div>
                                     </div>
+                                </div>
+                                <h3 class="my-4">Baca Juga</h3>
+                                <div class="row g-4">
+                                    <div class="col-12">
+                                        <div class="row g-4 align-items-center features-item">
+                                                    <div class="col-4">
+                                                        <div class="rounded-circle position-relative">
+                                                            <div class="overflow-hidden rounded-circle">
+                                                                <img src="{{ asset('uploads/' . $artikel->gambar_artikel) }}" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                                            </div>
+                                                            <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">{{ $artikel->kategori->nama_kategori }}</p>
+                                                            <a href="#" class="h6">
+                                                                {{ $artikel->judul }}
+                                                            </a>
+                                                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> {{ $artikel->created_at->format('M d, Y') }}</small>
+                                                        </div>
+                                                    </div>
+                                        </div>
+                                    </div>
+                                    
+                                
+                                <div class="col-lg-12">
+                                    <a href="#" class="link-hover btn border border-primary rounded-pill text-dark w-100 py-3 mb-4">View More</a>
                                 </div>
                             </div>
                         </div>
