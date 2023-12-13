@@ -43,7 +43,7 @@
           </button>
           <div class="collapse navbar-collapse bg-light py-3" id="navbarCollapse">
               <div class="navbar-nav mx-auto border-top">
-                  <a href="/" class="nav-item nav-link active">Home</a>
+                  <a href="/" class="nav-item nav-link">Home</a>
                   <a href="{{ route('detail.page') }}" class="nav-item nav-link">Artikel</a>
                 <a href="#" class="nav-item nav-link">Asmaul Husna</a>
                   <div class="nav-item dropdown">
@@ -67,7 +67,6 @@
                           </div>
                       </div>
                   </div>
-                  <button class="btn-search btn border border-primary btn-md-square rounded-circle bg-white my-auto" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
               </div>
           </div>
       </nav>

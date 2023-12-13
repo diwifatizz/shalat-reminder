@@ -48,7 +48,7 @@
                                 <i class="fas fa-map-marker-alt fa-2x text-primary me-4"></i>
                                 <div>
                                     <h4>Address</h4>
-                                    <p class="mb-0">Pekanbaru.IND</p>
+                                    <p class="mb-0"> Jl. HR. Soebrantas No.118, Sidomulyo Bar., Kec. Tampan, Kota Pekanbaru, Riau 28293 </p>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                                 <i class="fas fa-envelope fa-2x text-primary me-4"></i>
                                 <div>
                                     <h4>Mail Us</h4>
-                                    <p class="mb-0">info@example.com</p>
+                                    <p class="mb-0">garudacyberindo@gmail.com</p>
                                 </div>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                                 <i class="fa fa-phone-alt fa-2x text-primary me-4"></i>
                                 <div>
                                     <h4>Telephone</h4>
-                                    <p class="mb-0">(+012) 3456 7890</p>
+                                    <p class="mb-0">(+62) 811-7674-727</p>
                                 </div>
                             </div>
                         </div>

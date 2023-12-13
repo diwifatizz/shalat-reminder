@@ -28,7 +28,7 @@ use App\Http\Controllers\JadwalController;
 
 route::get('/', [FrontendController::class, 'index']);
 
-route::get('/detail-artikel/{slug}', [FrontendController::class, 'detail'])->name('detail-artikel');
+route::get('detail-artikel/{slug}', [FrontendController::class, 'detail'])->name('detail-artikel');
 
 Auth::routes();
 

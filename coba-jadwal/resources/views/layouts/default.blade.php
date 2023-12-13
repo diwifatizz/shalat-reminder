@@ -22,8 +22,8 @@
 	<link rel="stylesheet" href="{{ asset('back/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('back/css/atlantis.min.css') }}">
 
-	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link rel="stylesheet" href="{{ asset('back/css/demo.css') }}">
+	
+
 </head>
 <body>
 	<div class="wrapper">
