@@ -9,7 +9,7 @@
 <div class="row">
   <div class="col-md-4 mt-5">
       <div class="card" >
-          <img src="{{ asset('uploads/'. $row->gambar_artikel ) }}" class="card-img-top" alt="">
+          <img src="{{ asset('uploads/'. $row->gambar_artikel) }}" class="card-img-top" alt="">
           <div class="card-body">
             <h5 class="card-title">
 
