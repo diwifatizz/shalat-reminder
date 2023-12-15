@@ -17,6 +17,4 @@ class Slide extends Model
     ];
 
     protected $hidden =[];
-}   
-
-
+}

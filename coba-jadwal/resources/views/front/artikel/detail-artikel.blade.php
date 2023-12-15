@@ -87,7 +87,8 @@
                                                             <a href="#" class="h6">
                                                                 {{ $artikel->judul }}
                                                             </a>
-                                                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> {{ $artikel->created_at->format('M d, Y') }}</small>
+                                                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> {{\Carbon\Carbon::parse($artikel->created_at)->isoFormat('dddd, D MMMM Y')}}</small>
+                                                            
                                                         </div>
                                                     </div>
                                         </div>

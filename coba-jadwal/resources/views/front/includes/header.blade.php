@@ -1,40 +1,7 @@
-{{-- <div class="container-fluid topbar bg-dark d-none d-lg-block">
-  <div class="container px-0">
-      <div class="topbar-top d-flex justify-content-between flex-lg-wrap">
-          <div class="top-info flex-grow-0">
-              <span class="rounded-circle btn-sm-square bg-primary me-2">
-                  <i class="fas fa-bolt text-white"></i>
-              </span>
-              <div class="pe-2 me-3 border  border-white d-flex align-items-center">
-                  <p class="mb-0 text-white fs- fw-normal">ShalatReminder.net</p>
-              </div>
-              <div class="overflow-hidden" style="width: 600px;">
-                  <div id="note" class="ps-2">
-                      <img src="{{ asset ('fron/img/features-fashion.jpg') }}" class="img-fluid rounded-circle border border-3 border-primary me-2" style="width: 30px; height: 30px;" alt="">
-                      <a href="#"><p class="text-white mb-0 link-hover">Jadwal Shalat lima waktu dan artikel terbaru</p></a>
-                  </div>
-              </div>
-          </div>
-          <div class="top-link flex-lg-wrap">
-              <i class="fas fa-calendar-alt text-white bord border-secondary pe-2 me-2"> <span class="text-body">Tuesday, Sep 12, 2024</span></i>
-              <div class="d-flex icon">
-                  <p class="mb-0 text-white me-2">Follow Us:</p>
-                  <a href="" class="me-2"><i class="fab fa-facebook-f text-body link-hover"></i></a>
-                  <a href="" class="me-2"><i class="fab fa-twitter text-body link-hover"></i></a>
-                  <a href="" class="me-2"><i class="fab fa-instagram text-body link-hover"></i></a>
-                  <a href="" class="me-2"><i class="fab fa-youtube text-body link-hover"></i></a>
-                  <a href="" class="me-2"><i class="fab fa-linkedin-in text-body link-hover"></i></a>
-                  <a href="" class="me-2"><i class="fab fa-skype text-body link-hover"></i></a>
-                  <a href="" class=""><i class="fab fa-pinterest-p text-body link-hover"></i></a>
-              </div>
-          </div>
-      </div>
-  </div>
-</div> --}}
 <div class="container-fluid bg-light">
   <div class="container px-0">
       <nav class="navbar navbar-light navbar-expand-xl">
-          <a href="index.html" class="navbar-brand mt-3">
+          <a href="#" class="navbar-brand mt-3">
               <p class="text-primary display-6 mb-4" style="line-height: 0;">JadwalShalat</p>
               <small class="text-body fw-normal" style="letter-spacing: 2px;">Shalat Reminder</small>
           </a>
