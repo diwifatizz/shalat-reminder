@@ -2,12 +2,12 @@
 
 @section('content')
 
-
+@include('front.includes.slide')
 
 <!-- Jadwal Sholat Start -->
 
 <!-- Jadwal Sholat End -->
-@include('front.includes.slide')
+
 
 <!-- Latest News Start -->
 <div class="container-fluid latest-news py-5">
