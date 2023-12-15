@@ -1,5 +1,4 @@
 <div class="container py-5">
-
     <div class="row g-5">
         <div class="col-lg-6 col-xl-3">
             <div class="footer-item-1">
@@ -12,13 +11,15 @@
                     <a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i class="fab fa-facebook-f text-dark"></i></a>
                     <a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i class="fab fa-youtube text-dark"></i></a>
                     <a class="btn btn-light btn-md-square rounded-circle" href=""><i class="fab fa-linkedin-in text-dark"></i></a>
-                </div>
+                </div> 
             </div>
         </div>
         <div class="col-lg-6 col-xl-3">
             <div class="footer-item-2">
                 <div class="d-flex flex-column mb-4">
-                    <h4 class="mb-4 text-white">Recent Posts</h4>
+                    <h4 class="mb-4 text-white">about Us</h4>
+                    <p class="text-white">ShalatReminder adalah situs unggulan yang menyajikan jadwal sholat terkini untuk seluruh wilayah di Indonesia. Temukan kenyamanan dalam menjalani ibadah sehari-hari dengan informasi waktu sholat yang akurat. Selain itu, nikmati beragam artikel informatif tentang Islam yang menginspirasi.
+                         Mulailah hari Anda dengan kebijaksanaan dan koneksi spiritual melalui ShalatReminder</p>
                     <a href="#">
                         {{-- @php $count = 0; @endphp
                     @forelse ($artikel as $row)
@@ -46,8 +47,6 @@
         </div>
     </div>
 </div>
-
-
 <div class="col-lg-6 col-xl-3">
     <div class="d-flex flex-column text-start footer-item-3">
         <h4 class="mb-4 text-white">Categories</h4>
@@ -59,9 +58,8 @@
 <div class="col-lg-6 col-xl-3">
     <div class="footer-item-4">
         <h4 class="mb-4 text-white">Contact us</h4>
-        <p class="text-secondary line-h">Address: <span class="text-white">Jl. HR. Soebrantas No.118, Sidomulyo Bar., Kec. Tampan, Kota Pekanbaru, Riau 28293</span></p>
-                <p class="text-secondary line-h">Email: <span class="text-white">cobaxxxx@gmail.com</span></p>
-                <p class="text-secondary line-h">Phone: <span class="text-white">(+62) 811-xxxx-xxxx</span></p>
+        <p class="text-secondary line-h">Email: <span class="text-white">cobaxxxx@gmail.com</span></p>
+        <p class="text-secondary line-h">Phone: <span class="text-white">(+62) 811-xxxx-xxxx</span></p>
     </div>
 </div>
 </div>
