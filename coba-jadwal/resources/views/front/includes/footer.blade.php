@@ -15,11 +15,11 @@
             </div>
         </div>
         
-        {{-- <div class="col-lg-6 col-xl-3">
+        <div class="col-lg-6 col-xl-3">
             <div class="d-flex flex-column mb-4">
                 <h4 class="mb-4 text-white">Recent Posts</h4>
                 <a href="#"></a>
-                @php $count = 0; @endphp
+                {{-- @php $count = 0; @endphp
                 @forelse ($artikel->sortByDesc('created_at') as $row)
                     @if ($count < 2)
                         <div class="d-flex align-items-center" style="height: 80px;">
@@ -44,9 +44,9 @@
                     @endif
                 @empty
                     <p>Tidak ada Artikel</p>
-                @endforelse
+                @endforelse --}}
             </div>
-        </div> --}}
+        </div>
         
         
         <div class="col-lg-6 col-xl-3">

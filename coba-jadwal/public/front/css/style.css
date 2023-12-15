@@ -1,17 +1,16 @@
-
 /*** Spinner Start ***/
 #spinner {
     opacity: 0;
     visibility: hidden;
-    transition: opacity .8s ease-out, visibility 0s linear .5s;
+    transition: opacity 0.8s ease-out, visibility 0s linear 0.5s;
     z-index: 99999;
- }
+}
 
- #spinner.show {
-     transition: opacity .8s ease-out, visibility 0s linear .0s;
-     visibility: visible;
-     opacity: 1;
- }
+#spinner.show {
+    transition: opacity 0.8s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
 /*** Spinner End ***/
 
 .back-to-top {
@@ -38,7 +37,7 @@
 /*** Button Start ***/
 .btn {
     font-weight: 600;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .btn-square {
@@ -80,7 +79,6 @@
     color: var(--bs-primary) !important;
 }
 
-
 .img-zoomin {
     transition: 0.5s;
 }
@@ -100,7 +98,7 @@
 }
 
 .topbar .top-info {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 15px;
     font-weight: 400;
     letter-spacing: 1px;
@@ -109,7 +107,7 @@
 }
 
 .topbar .top-link {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 15px;
     font-weight: 400;
     letter-spacing: 1px;
@@ -121,13 +119,12 @@
     .sticky-top .top-link {
         display: none;
     }
-    
 }
 
 .topbar .top-link a {
     font-size: medium;
     font-weight: 400;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     letter-spacing: 1px;
 }
 
@@ -149,8 +146,12 @@
 }
 
 @keyframes noteAnimate {
-    from {left: -735px;}
-    to {left: 735px;}
+    from {
+        left: -735px;
+    }
+    to {
+        left: 735px;
+    }
 }
 
 /*** Topbar End ***/
@@ -159,9 +160,9 @@
 .navbar .navbar-nav .nav-link {
     padding: 10px 15px;
     font-weight: 400;
-    font-family: 'Fredoka', sans-serif;
+    font-family: "Fredoka", sans-serif;
     font-size: 16px;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .navbar .navbar-nav .nav-link:hover,
@@ -186,11 +187,11 @@
         visibility: hidden;
         top: 100%;
         font-weight: 400;
-        font-family: 'Fredoka', sans-serif;
+        font-family: "Fredoka", sans-serif;
         transform: rotateX(-75deg);
         transform-origin: 0% 0%;
         border: 0;
-        transition: .5s;
+        transition: 0.5s;
         opacity: 0;
     }
 }
@@ -205,7 +206,7 @@
     visibility: visible;
     background: var(--bs-light) !important;
     border-radius: 10px !important;
-    transition: .5s;
+    transition: 0.5s;
     opacity: 1;
 }
 
@@ -216,21 +217,23 @@
 }
 
 #searchModal .modal-content {
-    background: rgba(255, 255, 255, .8);
+    background: rgba(255, 255, 255, 0.8);
 }
 /*** Navbar End ***/
-
 
 /*** Features Start ***/
 .features {
     width: 100%;
-    background: linear-gradient(rgba(26, 125, 255, 0.5), rgba(255, 255, 255, 0.3)), url(../img/features-background.jpg);
+    background: linear-gradient(
+            rgba(26, 125, 255, 0.5),
+            rgba(255, 255, 255, 0.3)
+        ),
+        url(../img/features-background.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 /*** Features End ***/
-
 
 /*** Top News Start ***/
 .news-2 h3 {
@@ -251,9 +254,8 @@
 }
 /*** Top News End ***/
 
-
 /*** Latest News Start ***/
-.latest-news .latest-news-carousel.owl-carousel{
+.latest-news .latest-news-carousel.owl-carousel {
     position: relative;
 }
 
@@ -290,7 +292,6 @@
     border-radius: 10px;
 }
 /*** Latest News End ***/
-
 
 /*** Whats New Start ***/
 .populer-news .whats-carousel.owl-carousel {
@@ -349,18 +350,17 @@
 
 .lifestyle .lifestyle-item .lifestyle-content {
     position: absolute;
-    width: 100%; 
-    height: 100%; 
-    top: 0; 
-    left: 0; 
-    padding: 20px; 
-    display: flex; 
-    flex-direction: column; 
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
 }
 /*** Whats New End ***/
-
 
 /*** Banner Section start ***/
 .banner-2 {
@@ -378,11 +378,13 @@
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    background: linear-gradient(rgba(26, 125, 255, 0.7), rgba(255, 255, 255, 0.7));
+    background: linear-gradient(
+        rgba(26, 125, 255, 0.7),
+        rgba(255, 255, 255, 0.7)
+    );
     z-index: 2;
 }
 /*** Banner Section End ***/
-
 
 /*** Footer Start ***/
 .footer button:hover {
@@ -426,6 +428,3 @@
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 /*** Footer End ***/
-
-
-

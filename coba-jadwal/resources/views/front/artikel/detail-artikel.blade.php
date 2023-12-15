@@ -20,9 +20,8 @@
                     </div>
                     <div class="d-flex justify-content-start">
                         <a href="#" class="text-muted link-hover me-3"><i class="fa fa-user"></i>&nbsp;{{ $artikel->users->name }}</a>
-                        {{-- <a href="#" class="text-dark link-hover me-3"><i class="fa fa-eye"></i> {{ $artikel->views }} Views</a> --}}
                         <a href="#" class="text-muted link-hover">
-                            <i class="fa fa-calendar"></i> {{ $artikel->created_at->format('M d, Y') }}
+                            <i class="fa fa-calendar"></i> {{\Carbon\Carbon::parse($artikel->created_at)->isoFormat('dddd, D MMMM Y')}}
                         </a>
                     </div> <br>
 
@@ -70,34 +69,37 @@
                                     </div>
                                 </div>
                                 <h3 class="my-4">Baca Juga</h3>
-                                <div class="row g-4">
-                                    <div class="col-12">
-                                        <div class="row g-4 align-items-center features-item">
+                                    <div class="row g-4">
+                                        @foreach ($postinganTerbaru as $row)
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center features-item">
                                                     <div class="col-4">
                                                         <div class="rounded-circle position-relative">
                                                             <div class="overflow-hidden rounded-circle">
-                                                                <img src="{{ asset('uploads/' . $artikel->gambar_artikel) }}" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                                                <img src="{{ asset('uploads/' . $row->gambar_artikel) }}" class="img-zoomin img-fluid rounded-circle w-100" alt="">
                                                             </div>
-                                                            <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
                                                         </div>
                                                     </div>
                                                     <div class="col-8">
                                                         <div class="features-content d-flex flex-column">
-                                                            <p class="text-uppercase mb-2">{{ $artikel->kategori->nama_kategori }}</p>
+                                                            <p class="text-uppercase mb-2">{{ optional($row->kategori)->nama_kategori }}</p>
                                                             <a href="#" class="h6">
-                                                                {{ $artikel->judul }}
+                                                                {{ $row->judul }}
                                                             </a>
-                                                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> {{\Carbon\Carbon::parse($artikel->created_at)->isoFormat('dddd, D MMMM Y')}}</small>
-                                                            
+                                                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> {{\Carbon\Carbon::parse($row->created_at)->isoFormat('dddd, D MMMM Y')}}</small>
                                                         </div>
                                                     </div>
-                                        </div>
+                                                </div>
+                                            </div>
+                                        @endforeach 
                                     </div>
-                                    
-                                
-                                <div class="col-lg-12">
-                                    <a href="#" class="link-hover btn border border-primary rounded-pill text-dark w-100 py-3 mb-4">View More</a>
+                                </br>
+                                    <div class="col-lg-12">
+                                        <a href="{{ route('detail.page') }}" class="link-hover btn border border-primary rounded-pill text-dark w-100 py-3 mb-4">View More</a>
+                                    </div>
                                 </div>
+                                
+                            </div>                              
                             </div>
                         </div>
                     </div>
@@ -106,4 +108,5 @@
         </div>
     </div>
     <!-- Single Product End -->
+
 @endsection

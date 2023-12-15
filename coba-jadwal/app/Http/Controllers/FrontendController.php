@@ -28,7 +28,7 @@ class FrontendController extends Controller
         $artikel = Artikel::where('slug', $slug)->firstOrFail();
         $category = kategori::all();
         $iklanA = Iklan::where('id', '1')->first();
-        $postinganTerbaru = Artikel::orderBy('created_at', 'DESC')->limit('5')->get();
+        $postinganTerbaru = Artikel::orderBy('created_at', 'DESC')->limit('3')->get();
 
         return view('front.artikel.detail-artikel', [
             'artikel' => $artikel,
@@ -41,7 +41,7 @@ class FrontendController extends Controller
     public function article()
     {
         $category = kategori::all();
-        $artikel = Artikel::all();
+        $artikel = Artikel::orderBy('created_at', 'DESC')->paginate(5);
         $slide = Slide::all();
         
         return view('front.detail-page', [
@@ -49,7 +49,7 @@ class FrontendController extends Controller
             'artikel' => $artikel,
             'slide' => $slide
         ]);
-    }
+    }    
 
     public function kontak()
     {
@@ -63,4 +63,14 @@ class FrontendController extends Controller
             'slide' => $slide
         ]);
     }
+
+    public function search(Request $request)
+{
+    $query = $request->input('query');
+    $results = Artikel::where('judul', 'like', '%' . $query . '%')
+        ->orWhere('body', 'like', '%' . $query . '%')->get();
+
+    return view('front.detail-page', compact('results'));
+}
+
 }
