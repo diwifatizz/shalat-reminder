@@ -6,10 +6,12 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\CityController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\SlideController;
 use App\Http\Controllers\IklanController;
 use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\SholatController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,3 +61,7 @@ Route::resource('jadwal', JadwalController::class);
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
+
+Route::get('/fetch-and-save-cities', [CityController::class, 'fetchAndSaveCities']);
+
+Route::get('/fetch-data/{id_lokasi}/{tahun}/{bulan}', [SholatController::class, 'fetchDataAndSaveToDatabase']);
