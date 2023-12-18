@@ -7,10 +7,10 @@
                 <p class="text-secondary line-h">Email: <span class="text-white">garudacyberindo@gmail.com</span></p>
                 <p class="text-secondary line-h">Phone: <span class="text-white">(+62) 811-7674-727</span></p>
                 <div class="d-flex line-h">
-                    <a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i class="fab fa-twitter text-dark"></i></a>
-                    <a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i class="fab fa-facebook-f text-dark"></i></a>
-                    <a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i class="fab fa-youtube text-dark"></i></a>
-                    <a class="btn btn-light btn-md-square rounded-circle" href=""><i class="fab fa-linkedin-in text-dark"></i></a>
+                    <a class="btn btn-light me-2 btn-md-square rounded-circle" href="https://twitter.com/garudacyberid"><i class="fab fa-twitter text-dark"></i></a>
+                    <a class="btn btn-light me-2 btn-md-square rounded-circle" href="https://www.facebook.com/GarudaCyber/?locale=id_ID"><i class="fab fa-facebook-f text-dark"></i></a>
+                    <a class="btn btn-light me-2 btn-md-square rounded-circle" href="https://www.youtube.com/c/GarudaCyberIndonesia"><i class="fab fa-youtube text-dark"></i></a>
+                    <a class="btn btn-light btn-md-square rounded-circle" href="https://id.linkedin.com/company/garuda-cyber-indonesia"><i class="fab fa-linkedin-in text-dark"></i></a>
                 </div>
             </div>
         </div>
