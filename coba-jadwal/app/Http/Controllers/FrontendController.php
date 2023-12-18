@@ -31,28 +31,29 @@ class FrontendController extends Controller
         $artikel = Artikel::where('slug', $slug)->firstOrFail();
         $category = kategori::all();
         $iklanA = Iklan::where('id', '1')->first();
-        $postinganTerbaru = Artikel::orderBy('created_at', 'DESC')->limit('5')->get();
+        $postinganLama = Artikel::orderBy('created_at', 'asc')->take('3')->get();
 
         return view('front.artikel.detail-artikel', [
             'artikel' => $artikel,
             'category' => $category,
             'iklanA' => $iklanA,
-            'postinganTerbaru' => $postinganTerbaru
+            'postinganLama' => $postinganLama
         ]);
     }
 
     public function article()
     {
         $category = kategori::all();
-        $artikel = Artikel::all();
+        $artikel = Artikel::orderBy('created_at', 'DESC')->paginate(5);
         $slide = Slide::all();
-
+        
         return view('front.detail-page', [
             'category' => $category,
-            'artikel' => $artikel,
+            'artikel' => $artikel->paginate(5)->withQueryString(),
             'slide' => $slide
+            
         ]);
-    }
+    }    
 
     public function kontak()
     {
@@ -66,4 +67,17 @@ class FrontendController extends Controller
             'slide' => $slide
         ]);
     }
+
+    public function notfound() {
+        $category = kategori::all();
+        $artikel = Artikel::all();
+        $slide = Slide::all();
+
+        return view('front.notfound', [
+            'category' => $category,
+            'artikel' => $artikel,
+            'slide' => $slide
+        ]);
+    }
+
 }

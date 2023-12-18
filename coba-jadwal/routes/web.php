@@ -6,7 +6,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\ArtikelController;
-use App\Http\Controllers\asmaulController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\SlideController;
@@ -37,9 +36,11 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/detail-page', [FrontendController::class, 'article'])->name('detail.page');
+Route::get('/detail-page', [FrontendController::class, 'article'])->name('detail-page');
+
 Route::get('/kontak', [FrontendController::class, 'kontak'])->name('kontak');
 
+Route::get('/notfound', [FrontendController::class, 'notfound'])->name('notfound');
 
 
 Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
@@ -56,7 +57,6 @@ Route::resource('iklan', IklanController::class);
 
 Route::get('Jadwal', [SholatController::class, 'index'])->name('Jadwal.index');
 
-Route::get('/asmaul-husna', [asmaulController::class, 'index'])->name('asmaul-husna.index');
 
 Route::get('front.home', [JadwalController::class, 'index'])->name('front.home');
 

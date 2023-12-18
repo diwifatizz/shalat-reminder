@@ -43,17 +43,13 @@
     </div>
     <!-- Navbar End -->
 
+
     <!-- Main Post Section Start -->
-    <div class="container-fluid py-5">
+    
         @yield('content')
-    </div>
+    
     <!-- Main Post Section End -->
 
-    <!-- Latest News Start -->
-    <div class="container-fluid latest-news py-5">
-        @include('front.includes.slide')
-    </div>
-    <!-- Latest News End -->
 
     <!-- Most Populer News Start -->
     <!-- Most Populer News End -->
