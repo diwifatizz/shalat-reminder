@@ -33,10 +33,10 @@
 <!-- Sweet Alert -->
 <script src="{{ asset('back/js/plugin/sweetalert/sweetalert.min.js')}}"></script>
 
-<!-- Atlantis JS -->
-<script src="{{ asset('back/js/atlantis.min.js')}}"></script>
+<!-- Atlantis JS 
+ <script src="{{ asset('back/js/atlantis.min.js')}}"></script>
 
-<!-- Atlantis DEMO methods, don't include it in your project! -->
+ Atlantis DEMO methods, don't include it in your project! 
 <script src="{{ asset('back/js/setting-demo.js')}}"></script>
 <script src="{{ asset('back/js/demo.js')}}"></script>
 <script>
@@ -131,7 +131,7 @@
         lineWidth: '2',
         lineColor: '#ffa534',
         fillColor: 'rgba(255, 165, 52, .14)'
-    });
+    }); -->
 </script>
 
 
