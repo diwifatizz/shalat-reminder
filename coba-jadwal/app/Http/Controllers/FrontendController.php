@@ -28,13 +28,13 @@ class FrontendController extends Controller
         $artikel = Artikel::where('slug', $slug)->firstOrFail();
         $category = kategori::all();
         $iklanA = Iklan::where('id', '1')->first();
-        $postinganTerbaru = Artikel::orderBy('created_at', 'DESC')->limit('3')->get();
+        $postinganLama = Artikel::orderBy('created_at', 'asc')->take('3')->get();
 
         return view('front.artikel.detail-artikel', [
             'artikel' => $artikel,
             'category' => $category,
             'iklanA' => $iklanA,
-            'postinganTerbaru' => $postinganTerbaru
+            'postinganLama' => $postinganLama
         ]);
     }
 
@@ -43,11 +43,19 @@ class FrontendController extends Controller
         $category = kategori::all();
         $artikel = Artikel::orderBy('created_at', 'DESC')->paginate(5);
         $slide = Slide::all();
+
+        $artikel = Artikel::latest();
+
+        if(request('search')) {
+            $artikel->where('judul', 'like', '%' . request('search'). '%')
+            ->orWhere('body', 'like', '%' . request('search'). '%');
+        }
         
         return view('front.detail-page', [
             'category' => $category,
-            'artikel' => $artikel,
+            'artikel' => $artikel->paginate(5)->withQueryString(),
             'slide' => $slide
+            
         ]);
     }    
 
@@ -64,13 +72,21 @@ class FrontendController extends Controller
         ]);
     }
 
-    public function search(Request $request)
-{
-    $query = $request->input('query');
-    $results = Artikel::where('judul', 'like', '%' . $query . '%')
-        ->orWhere('body', 'like', '%' . $query . '%')->get();
+//     public function search(Request $request)
+// {
+//     $query = $request->input('query');
+//     $artikel = Artikel::where('judul', 'LIKE', '%' .$query. '%')
+//     ->orWhere('kategori_id', 'LIKE', '%' .$query. '%')
+//     ->get();
+//     $category = Kategori::all();
+//     // if($request->has('search')) {
+//     //     $artikel = Artikel::where('judul','LIKE','%'.$request->search. '%')->get();
+//     // }
+//     // else {
+//     //     $artikel = Artikel::all();
+//     // }
 
-    return view('front.detail-page', compact('results'));
-}
+//     return view('front.detail-page', compact('artikel', 'category'));
+// }
 
 }

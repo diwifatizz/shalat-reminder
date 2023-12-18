@@ -36,8 +36,8 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/detail-page', [FrontendController::class, 'article'])->name('detail.page');
-// Route::get('/detail-page', [FrontendController::class, 'search'])->name('search');
+Route::get('/detail-page', [FrontendController::class, 'article'])->name('detail-page');
+
 Route::get('/kontak', [FrontendController::class, 'kontak'])->name('kontak');
 
 

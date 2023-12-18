@@ -4,9 +4,9 @@
 
 <div class="container-fluid populer-news py-5">
     <div class="container py-5">  
-        <form action="#" method="GET" class="mb-4">
+        <form action="{{ route('detail-page')}}" method="GET" class="mb-4">
             <div class="input-group">
-                <input type="text" name="query" class="form-control" placeholder="Cari artikel...">
+                <input type="search" name="search" class="form-control" placeholder="Cari artikel..." value="{{ request('search') }}">
                 <button type="submit" class="btn-search btn border border-primary btn-md-square bg-white my-auto">
                     <i class="fas fa-search text-primary"></i>
                 </button>
@@ -34,9 +34,10 @@
                                             </div>
                                         @endforeach
                                         {{-- pagination --}}
-                                        {{-- <div class="col-lg-12 mt-3">
-                                            {{ $artikel->links() }}
-                                        </div>                                         --}}
+                                        <div class="d-flex justify-content-end">{{ $artikel->links() }}
+                                        </div>
+                                            
+                                                         
                                     </div>
                                 </div>
                             </div>
