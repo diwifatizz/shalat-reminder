@@ -23,7 +23,7 @@ class IklanController extends Controller
      */
     public function create()
     {
-        return view('back.iklan.create');
+        // return view('back.iklan.create');
     }
 
     /**
@@ -31,18 +31,18 @@ class IklanController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'judul' => 'required',
-            'gambar_iklan' => 'mimes:png,jpg,webp,jpeg,gif,bmp'
-        ]);
+        // $this->validate($request, [
+        //     'judul' => 'required',
+        //     'gambar_iklan' => 'mimes:png,jpg,webp,jpeg,gif,bmp'
+        // ]);
 
-        $data = $request->all();
-        $data['gambar_iklan'] = $request->file('gambar_iklan')->store('iklan');
+        // $data = $request->all();
+        // $data['gambar_iklan'] = $request->file('gambar_iklan')->store('iklan');
 
-        Iklan::create($data);
+        // Iklan::create($data);
 
-        Alert::success('Success', 'Data Berhasil Ditambah');
-        return redirect()->route('iklan.index');
+        // Alert::success('Success', 'Data Berhasil Ditambah');
+        // return redirect()->route('iklan.index');
     }
 
     /**
@@ -103,13 +103,13 @@ class IklanController extends Controller
      */
     public function destroy(string $id)
     {
-        $iklan = Iklan::find($id);
+        // $iklan = Iklan::find($id);
 
-        Storage::delete($iklan->gambar_iklan);
+        // Storage::delete($iklan->gambar_iklan);
 
-        $iklan->delete();
+        // $iklan->delete();
 
-        Alert::error('Success', 'Data Berhasil Dihapus');
-        return redirect()->route('iklan.index');
+        // Alert::error('Success', 'Data Berhasil Dihapus');
+        // return redirect()->route('iklan.index');
     }
 }

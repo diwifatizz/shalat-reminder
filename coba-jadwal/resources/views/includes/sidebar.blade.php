@@ -10,12 +10,12 @@
                         <span>
                             {{ Auth::user()->name }}
                             <span class="user-level">{{ Auth::user()->level }}</span>
-                            <span class="caret"></span>
+                        
                         </span>
                     </a>
-                    <div class="clearfix"></div>
+                   <div class="clearfix"></div>
 
-                    <div class="collapse in" id="collapseExample">
+                     {{-- <div class="collapse in" id="collapseExample">
                         <ul class="nav">
                             <li>
                                 <a href="#profile">
@@ -23,7 +23,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 
@@ -87,11 +87,18 @@
 
                 
                <li class="nav-item">
-                <a href="{{ route('jadwal.index') }}">
+                <a href="{{ route('Jadwal.index') }}">
                     <i class="fas fa-archway"></i>
                     <p>Jadwal-shalat</p>
                 </a>
                </li>
+
+               <li class="nav-section">
+                <span class="sidebar-mini-icon">
+                    <i class="fa fa-ellipsis-h"></i>
+                </span>
+                <h4 class="text-section">Back</h4>
+            </li>
          
                @endif
                 <li class="nav-item">

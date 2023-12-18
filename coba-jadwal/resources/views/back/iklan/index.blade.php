@@ -16,7 +16,7 @@
                 <div class="card-header">
                     <div class="card-head-row">
                         <div class="card-title">Data Iklan</div>
-                        <a href="{{ route ('iklan.create') }}" class="btn btn-primary ml-auto"> <i class="fas fa-plus"></i> Tambah Iklan</a>
+                        {{-- <a href="{{ route ('iklan.create') }}" class="btn btn-primary ml-auto"> <i class="fas fa-plus"></i> Tambah Iklan</a> --}}
                     </div>
                 </div>
                 <div class="card-body">
@@ -54,13 +54,13 @@
                                     <td>
                                         <a href="{{ route ('iklan.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-pencil"></i> Edit</a>
 
-                                        <form action="{{ route ('iklan.destroy', $row->id) }}" method="POST" class="d-inline">
+                                        {{-- <form action="{{ route ('iklan.destroy', $row->id) }}" method="POST" class="d-inline">
                                             @csrf
                                             @method('delete')
                                             <button class="btn btn-danger btn-sm ">
                                                 <i class="fa fa-trash"></i>
                                             </button>
-                                            </form>
+                                            </form> --}}
                                     </td>
                                 </tr>
                                 @empty

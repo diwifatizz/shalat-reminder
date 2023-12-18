@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Artikel;
 use App\Models\Iklan;
 use App\Models\kategori;
+use App\Models\sholat;
 use App\Models\Slide;
 use Illuminate\Http\Request;
 
@@ -15,11 +16,13 @@ class FrontendController extends Controller
         $category = kategori::all();
         $artikel = Artikel::all();
         $slide = Slide::all();
+        $jadwalfront = sholat::all();
 
         return view('front.home', [
             'category' => $category,
             'artikel' => $artikel,
-            'slide' => $slide
+            'slide' => $slide,
+            'jadwalfront' => $jadwalfront
         ]);
     }
 
@@ -43,7 +46,7 @@ class FrontendController extends Controller
         $category = kategori::all();
         $artikel = Artikel::all();
         $slide = Slide::all();
-        
+
         return view('front.detail-page', [
             'category' => $category,
             'artikel' => $artikel,

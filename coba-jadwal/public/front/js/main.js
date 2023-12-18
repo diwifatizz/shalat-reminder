@@ -140,22 +140,20 @@ function getCurrentTime() {
     document.getElementById("current-date").textContent = formattedDate;
 }
 
-// Panggil fungsi pertama kali dan set interval untuk memperbarui waktu setiap detik
-getCurrentTime();
-setInterval(getCurrentTime, 1000);
-
 // Fungsi untuk mendapatkan waktu dan tanggal aktual
 function getCurrentDateTime() {
     const now = new Date();
-    const day = now.toLocaleDateString("id-ID", { weekday: "long" });
-    const date = now.toLocaleDateString("id-ID", {
-        month: "short",
-        day: "numeric",
+    const time = now.toLocaleTimeString("en-US", { hour12: false });
+    const date = now.toLocaleDateString("en-US", {
+        weekday: "short",
+        day: "2-digit",
+        month: "2-digit",
         year: "numeric",
     });
 
-    document.getElementById("current day").textContent = day;
-    document.getElementById("current date").textContent = date;
+    // Perbarui elemen HTML dengan ID yang sesuai
+    document.getElementById("current-time").textContent = time;
+    document.getElementById("current-date").textContent = date;
 }
 
 // Panggil fungsi pertama kali dan set interval untuk memperbarui waktu setiap detik

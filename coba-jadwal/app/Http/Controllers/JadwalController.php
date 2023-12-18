@@ -2,63 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
 class JadwalController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function index(Request $request)
     {
-        return view('back.Jadwal.index');
-    }
+        $country = $request->input('country', 'Indonesia');
+        $city = $request->input('city', 'DefaultCity');
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+        $year = $request->input('year', date('Y'));
+        $month = $request->input('month', date('m'));
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $client = new Client();
+        $response = $client->get("https://api.aladhan.com/v1/calendarByCity?country=$country&city=$city", [
+            'query' => [
+                'city' => $city,
+                'country' => $country,
+                'month' => $month,
+                'year' => $year,
+            ],
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+        $data = json_decode($response->getBody(), true);
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return view('front.home', [
+            'jadwal' => $data['data'],
+            'year' => $year,
+            'month' => $month,
+            'city' => $city,
+        ]);
     }
 }

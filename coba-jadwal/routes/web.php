@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\asmaulController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\SlideController;
@@ -53,7 +54,11 @@ Route::resource('slide', SlideController::class);
 
 Route::resource('iklan', IklanController::class);
 
-Route::resource('jadwal', JadwalController::class);
+Route::get('Jadwal', [SholatController::class, 'index'])->name('Jadwal.index');
+
+Route::get('/asmaul-husna', [asmaulController::class, 'index'])->name('asmaul-husna.index');
+
+Route::get('front.home', [JadwalController::class, 'index'])->name('front.home');
 
 
 //route untuk file manage di dalam views-back-artikel-(create dan edit)
