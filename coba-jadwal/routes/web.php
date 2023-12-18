@@ -40,6 +40,7 @@ Route::get('/detail-page', [FrontendController::class, 'article'])->name('detail
 
 Route::get('/kontak', [FrontendController::class, 'kontak'])->name('kontak');
 
+Route::get('/notfound', [FrontendController::class, 'notfound'])->name('notfound');
 
 
 Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');

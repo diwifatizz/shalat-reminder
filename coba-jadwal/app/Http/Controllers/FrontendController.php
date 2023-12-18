@@ -72,21 +72,16 @@ class FrontendController extends Controller
         ]);
     }
 
-//     public function search(Request $request)
-// {
-//     $query = $request->input('query');
-//     $artikel = Artikel::where('judul', 'LIKE', '%' .$query. '%')
-//     ->orWhere('kategori_id', 'LIKE', '%' .$query. '%')
-//     ->get();
-//     $category = Kategori::all();
-//     // if($request->has('search')) {
-//     //     $artikel = Artikel::where('judul','LIKE','%'.$request->search. '%')->get();
-//     // }
-//     // else {
-//     //     $artikel = Artikel::all();
-//     // }
+    public function notfound() {
+        $category = kategori::all();
+        $artikel = Artikel::all();
+        $slide = Slide::all();
 
-//     return view('front.detail-page', compact('artikel', 'category'));
-// }
+        return view('front.notfound', [
+            'category' => $category,
+            'artikel' => $artikel,
+            'slide' => $slide
+        ]);
+    }
 
 }
