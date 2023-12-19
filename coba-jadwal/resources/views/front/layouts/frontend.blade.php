@@ -16,6 +16,7 @@
     <!-- Icon Font Stylesheet -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="website icon" type="png" href="{{ asset('front/img/logo.png') }}">
 
     <!-- Libraries Stylesheet -->
     <link href="{{ asset('front/lib/animate/animate.min.css') }}" rel="stylesheet">

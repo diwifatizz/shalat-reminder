@@ -63,7 +63,7 @@
                                             <img src="{{ asset('uploads/'. $iklanA->gambar_iklan) }}" class="img-fluid w-100 rounded" alt="">
                                             <div class="text-center banner-content-2">
                                                 <h6 class="mb-2">{{ $iklanA->judul }}</h6>
-                                                <a href="{{ $iklanA->link }}" class="btn btn-outline-primary text-white px-4">View</a>
+                                                <a href="{{ $iklanA->link }}" class="btn btn-primary text-white px-4">View</a>
                                             </div>
                                         @endif
                                     </div>

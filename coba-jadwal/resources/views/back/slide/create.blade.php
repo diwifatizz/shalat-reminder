@@ -23,12 +23,12 @@
                     <form method="POST" action="{{ route('slide.store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="judul_slide">slide banner</label>
-                            <input type="text" name="judul_slide" class="form-control" placeholder="Masukkan judul slide">
+                            <label for="judul_slide">Slide Hadist</label>
+                            <input type="text" name="judul_slide" class="form-control" placeholder="Hadist Riwayat">
                         </div>
                         <div class="form-group">
-                            <label for="link">link</label>
-                            <input type="text" name="link" class="form-control" placeholder="Masukkan link">
+                            <label for="link">Hadist</label>
+                            <input type="text" name="link" class="form-control" placeholder="Masukkan Hadist">
                         </div>
                        
                         <div class="form-group">

@@ -31,10 +31,10 @@
                                 <tr>
                                     <th>No</th>
                                     <th>ID</th>
-                                    <th>judul slide</th>
-                                    <th>link</th>
-                                    <th>status</th>
-                                    <th>gambar</th>
+                                    <th>HR</th>
+                                    <th>Hadist</th>
+                                    <th>Status</th>
+                                    <th>Gambar</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
