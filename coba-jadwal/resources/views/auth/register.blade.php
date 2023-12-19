@@ -61,6 +61,20 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                            <label for="level" class="col-md-4 col-form-label text-md-end">{{ __('level') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="level" type="text" class="form-control @error('level') is-invalid @enderror" name="level" value="{{ old('level') }}" required autocomplete="level" autofocus>
+
+                                @error('level')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

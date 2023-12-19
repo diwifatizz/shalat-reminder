@@ -6,7 +6,6 @@
     transition: opacity 0.8s ease-out, visibility 0s linear 0.5s;
     z-index: 99999;
 }
-}
 
 #spinner.show {
     transition: opacity 0.8s ease-out, visibility 0s linear 0s;
@@ -467,15 +466,15 @@
 
 section {
     /* background: var(--bg-color); */
-    min-height: 100vh;
+    min-height: 80vh;
 }
 
 section {
     /* background: var(--bg-color); */
-    min-height: 100vh;
+    min-height: 80vh;
 }
 #section-shalat {
-    padding: 1rem 10% 5rem;
+    padding: 1rem 15% 5rem;
     text-align: center;
 }
 h3 {
@@ -489,7 +488,7 @@ h3 {
     margin: 0.5rem;
 }
 .container-shalat {
-    margin-top: 20px;
+    margin-top: 40px;
     background-color: #f0ecf4;
 }
 .card-header {

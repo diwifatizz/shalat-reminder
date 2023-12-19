@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Artikel;
 use App\Models\Iklan;
 use App\Models\kategori;
-use App\Models\sholat;
 use App\Models\Slide;
 use Illuminate\Http\Request;
 
@@ -16,13 +15,13 @@ class FrontendController extends Controller
         $category = kategori::all();
         $artikel = Artikel::all();
         $slide = Slide::all();
-        $jadwalfront = sholat::all();
+
 
         return view('front.home', [
             'category' => $category,
             'artikel' => $artikel,
             'slide' => $slide,
-            'jadwalfront' => $jadwalfront
+
         ]);
     }
 
@@ -40,20 +39,26 @@ class FrontendController extends Controller
             'postinganLama' => $postinganLama
         ]);
     }
-
     public function article()
     {
         $category = kategori::all();
         $artikel = Artikel::orderBy('created_at', 'DESC')->paginate(5);
         $slide = Slide::all();
-        
+
+        $artikel = Artikel::latest();
+
+        if (request('search')) {
+            $artikel->where('judul', 'like', '%' . request('search') . '%')
+                ->orWhere('body', 'like', '%' . request('search') . '%');
+        }
+
         return view('front.detail-page', [
             'category' => $category,
             'artikel' => $artikel->paginate(5)->withQueryString(),
             'slide' => $slide
-            
+
         ]);
-    }    
+    }
 
     public function kontak()
     {
@@ -68,7 +73,8 @@ class FrontendController extends Controller
         ]);
     }
 
-    public function notfound() {
+    public function notfound()
+    {
         $category = kategori::all();
         $artikel = Artikel::all();
         $slide = Slide::all();
@@ -79,5 +85,4 @@ class FrontendController extends Controller
             'slide' => $slide
         ]);
     }
-
 }

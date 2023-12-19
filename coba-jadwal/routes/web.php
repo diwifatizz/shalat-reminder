@@ -6,11 +6,12 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\AsmaulController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\SlideController;
 use App\Http\Controllers\IklanController;
-use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\JadwalShalatController;
 use App\Http\Controllers\SholatController;
 
 /*
@@ -55,10 +56,13 @@ Route::resource('slide', SlideController::class);
 
 Route::resource('iklan', IklanController::class);
 
-Route::get('Jadwal', [SholatController::class, 'index'])->name('Jadwal.index');
+//route jadwal di admin ni
+// Route::get('Jadwal', [SholatController::class, 'index'])->name('Jadwal.index');
 
+Route::get('/asmaul-husna', [AsmaulController::class, 'index'])->name('asmaul-husna.index');
 
-Route::get('front.home', [JadwalController::class, 'index'])->name('front.home');
+Route::get('/jadwalshalat', [JadwalShalatController::class, 'index'])->name('jadwalshalat.index');
+
 
 
 //route untuk file manage di dalam views-back-artikel-(create dan edit)
