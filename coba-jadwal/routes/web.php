@@ -6,13 +6,14 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\AsmaulController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\SlideController;
 use App\Http\Controllers\IklanController;
-use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\JadwalShalatController;
 use App\Http\Controllers\SholatController;
-use App\Http\Controllers\AsmaulController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,7 +56,13 @@ Route::resource('slide', SlideController::class);
 
 Route::resource('iklan', IklanController::class);
 
-Route::resource('jadwal', JadwalController::class);
+//route jadwal di admin ni
+// Route::get('Jadwal', [SholatController::class, 'index'])->name('Jadwal.index');
+
+Route::get('/asmaul-husna', [AsmaulController::class, 'index'])->name('asmaul-husna.index');
+
+Route::get('/jadwalshalat', [JadwalShalatController::class, 'index'])->name('jadwalshalat.index');
+
 
 
 //route untuk file manage di dalam views-back-artikel-(create dan edit)
@@ -67,4 +74,3 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 Route::get('/fetch-and-save-cities', [CityController::class, 'fetchAndSaveCities']);
 
 Route::get('/fetch-data/{id_lokasi}/{tahun}/{bulan}', [SholatController::class, 'fetchDataAndSaveToDatabase']);
-Route::get('/asmaul-husna', [AsmaulController::class, 'index'])->name('asmaul-husna.index');

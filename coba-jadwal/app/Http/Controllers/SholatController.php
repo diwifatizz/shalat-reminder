@@ -52,7 +52,11 @@ class SholatController extends Controller
      */
     public function index()
     {
-        //
+        // $jadwalshalat = sholat::all();
+
+        // return view('back.Jadwal.index', [
+        //     'jadwalshalat' => $jadwalshalat
+        // ]);
     }
 
     /**

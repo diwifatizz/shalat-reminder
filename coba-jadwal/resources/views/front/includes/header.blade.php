@@ -11,6 +11,7 @@
             <div class="collapse navbar-collapse bg-transparent py-3" id="navbarCollapse">
                 <div class="navbar-nav mx-auto border-top">
                     <a href="/" class="nav-item nav-link">Home</a>
+                    <a href="{{ route('jadwalshalat.index') }}" class="nav-item nav-link">JadwalShalat</a>
                     <a href="{{ route('detail-page') }}" class="nav-item nav-link">Artikel</a>
                     <a href="{{ route('asmaul-husna.index') }}" class="nav-item nav-link">Asmaul-Husna</a>
                     <div class="nav-item dropdown">

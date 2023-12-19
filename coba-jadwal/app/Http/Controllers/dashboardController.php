@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Artikel;
+use App\Models\Iklan;
 use App\Models\kategori;
 
 class dashboardController extends Controller
@@ -16,8 +17,9 @@ class dashboardController extends Controller
     {
         $imut = User::count();
         $artikel = Artikel::count();
-        $kategori = kategori::count();;
-        return view('back.dashboard', compact('imut', 'artikel', 'kategori'));
+        $kategori = kategori::count();
+        $iklan = Iklan::count();
+        return view('back.dashboard', compact('imut', 'artikel', 'kategori', 'iklan'));
     }
 
     /**
