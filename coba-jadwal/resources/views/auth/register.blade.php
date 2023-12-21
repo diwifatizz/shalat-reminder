@@ -59,16 +59,6 @@
                     </div>
 
                     <div class="inputbox">
-<<<<<<< HEAD
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input id="level" type="text" class="form-control @error('level') is-invalid @enderror" name="level" value="{{ old('level') }}" required autocomplete="level" autofocus>
-                        <label>Level</label>
-                        @error('level')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-=======
                         <ion-icon name="person-outline"></ion-icon>
                         <label for="level" class="col-md-4 col-form-label text-md-end"></label>
                         <div class="col-md-6">
@@ -81,7 +71,6 @@
                                 </span>
                             @enderror
                         </div>
->>>>>>> e953c84ce627f452a3b5c2b44591fab35b074564
                     </div>
 
                     <div class="row mb-0">

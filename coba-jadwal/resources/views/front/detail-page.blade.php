@@ -23,7 +23,7 @@
                             <div id="tab-1" class="tab-pane fade show active">
                                 <div class="row g-4 align-items-center">
                                     <div class="row g-4">
-                                        @foreach ($artikel->where('status', 'publish') as $singleArtikel)
+                                        @foreach ($artikel as $singleArtikel)
                                         <div class="col-3">
                                             <img src="{{ asset('uploads/'. $singleArtikel->gambar_artikel ) }}" class="img-fluid w-100 rounded" alt="">
                                         </div>
@@ -36,6 +36,8 @@
                                         {{-- pagination --}}
                                         <div class="d-flex justify-content-end">{{ $artikel->links() }}
                                         </div>
+
+
                                     </div>
                                 </div>
                             </div>

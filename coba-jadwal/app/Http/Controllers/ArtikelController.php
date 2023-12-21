@@ -17,15 +17,12 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        // Mengambil semua data artikel, termasuk yang memiliki status 'draft'
         $artikel = Artikel::all();
 
-        // Mengirimkan data artikel ke tampilan
         return view('back.artikel.index', [
             'artikel' => $artikel
         ]);
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -43,7 +40,8 @@ class ArtikelController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'judul' => 'required'
+            'judul' => 'required',
+            'is_active' => 'required', // Pastikan status diisi
         ]);
 
         $data = $request->all();
@@ -52,8 +50,11 @@ class ArtikelController extends Controller
         $data['views'] = 0;
         $data['gambar_artikel'] = $request->file('gambar_artikel')->store('artikel');
 
-        Artikel::create($data);
 
+        // Set status artikel dari dropdown
+        $data['is_active'] = $request->input('is_active');
+
+        Artikel::create($data);
 
         Alert::success('Success', 'Data berhasil ditambahkan');
         return redirect()->route('artikel.index');
@@ -85,6 +86,7 @@ class ArtikelController extends Controller
     /**
      * Update the specified resource in storage.
      */
+
     public function update(Request $request, string $id)
     {
         // $this->validate($request, [
@@ -100,8 +102,8 @@ class ArtikelController extends Controller
                 'kategori_id' => $request->kategori_id,
                 'is_active' => $request->is_active,
                 'user_id' => Auth::id(),
-            ]);
 
+            ]);
 
             Alert::warning('Success', 'Data berhasil diupdate');
             return redirect()->route('artikel.index');
@@ -113,12 +115,11 @@ class ArtikelController extends Controller
                 'body' => $request->body,
                 'slug' => Str::slug($request->judul),
                 'kategori_id' => $request->kategori_id,
-                // 'is_active' => $request->is_active,
+                'is_active' => $request->is_active,
                 'user_id' => Auth::id(),
+
                 'gambar_artikel' => $request->file('gambar_artikel')->store('artikel'),
             ]);
-
-
 
             Alert::warning('Success', 'Data berhasil diupdate');
             return redirect()->route('artikel.index');
@@ -139,21 +140,5 @@ class ArtikelController extends Controller
 
         Alert::error('Success', 'Data berhasil dihapus');
         return redirect()->route('artikel.index');
-    }
-    public function updateStatus(Request $request, $id)
-    {
-        // Validate the request to ensure the 'status' field is present and has a valid value.
-        $request->validate([
-            'status' => 'required|in:publish,draft',
-        ]);
-
-        // Update the artikel's status based on the provided input.
-        $artikel = Artikel::find($id);
-        $artikel->update([
-            'status' => $request->input('status'),
-        ]);
-
-        // Redirect to the artikel index page with a success message.
-        return redirect()->route('artikel.index')->with('success', 'Artikel berhasil diperbarui.');
     }
 }

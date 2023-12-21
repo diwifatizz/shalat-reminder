@@ -84,7 +84,12 @@
                     </span>
                     <h4 class="text-section">Master Jadwal</h4>
                 </li>
-
+                <li class="nav-item">
+                    <a href="{{ route('Jadwal.index') }}">
+                        <i class="fas fa-archway"></i>
+                    <p>Jadwal sholat</p>
+                    </a>
+                </li>
 
                <li class="nav-section">
                 <span class="sidebar-mini-icon">
