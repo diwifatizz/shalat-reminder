@@ -18,6 +18,7 @@
 }
 
 .container-asma{
+    position: relative;
     width: 15rem;
     height: 14rem;
     margin: auto auto 10px auto;
@@ -44,7 +45,7 @@
     display: block;
     align-items: center;
 }
-
+   
 </style>
 
 

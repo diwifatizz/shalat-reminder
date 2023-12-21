@@ -28,7 +28,7 @@ use App\Http\Controllers\SholatController;
 //     return view('welcome');
 // });
 
-route::get('/', [FrontendController::class, 'index']);
+route::get('/', [FrontendController::class, 'index'])->name('index');
 
 route::get('detail-artikel/{slug}', [FrontendController::class, 'detail'])->name('detail-artikel');
 
@@ -38,6 +38,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/detail-page', [FrontendController::class, 'article'])->name('detail-page');
 
+Route::get('/detail-page/{category}', [FrontendController::class, 'categories'])->name('detail-cat');
 
 Route::get('/notfound', [FrontendController::class, 'notfound'])->name('notfound');
 

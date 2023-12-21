@@ -12,7 +12,7 @@
                 <h1 class="display-1">404</h1>
                 <h1 class="mb-4">Halaman Tidak Ditemukan</h1>
                 <p class="mb-4">Maaf, Halaman yang kamu cari tidak tersedia. Silahkan kembali ke Home atau gunakan fitur Pencarian</p>
-                <a class="btn link-hover border border-primary rounded-pill py-3 px-5" href="index.html">Kembali Ke Home</a>
+                <a class="btn link-hover border border-primary rounded-pill py-3 px-5" href="{{ route('index') }}">Kembali Ke Home</a>
             </div>
         </div>
     </div>

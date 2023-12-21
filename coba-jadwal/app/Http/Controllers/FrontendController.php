@@ -72,4 +72,18 @@ class FrontendController extends Controller
             'slide' => $slide
         ]);
     }
+
+    public function categories($category) 
+    {
+        $artikel = Artikel::where('category', $category)->get();
+        $slide = Slide::all();
+        $category = kategori::all();
+
+        return view('detail-page', [
+            'category' => $category,
+            'artikel' => $artikel,
+            'slide' => $slide
+        ]);
+
+    }
 }
