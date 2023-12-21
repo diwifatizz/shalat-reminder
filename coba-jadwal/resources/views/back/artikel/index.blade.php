@@ -61,11 +61,11 @@
                                         <a href="{{ route ('artikel.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-pen"></i></a>
 
                                         <form action="{{ route ('artikel.destroy', $row->id) }}" method="POST" class="d-inline">
-                                        @csrf
-                                        @method('delete')
-                                        <button class="btn btn-danger btn-sm ">
-                                            <i class="fa fa-trash"></i>
-                                        </button>
+                                            @csrf
+                                            @method('delete')
+                                            <button class="btn btn-danger btn-sm ">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
                                         </form>
                                     </td>
                                 </tr>
