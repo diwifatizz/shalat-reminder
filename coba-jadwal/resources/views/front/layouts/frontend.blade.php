@@ -28,6 +28,15 @@
     <!-- Template Stylesheet -->
     <link href="{{ asset('front/css/style.css') }}" rel="stylesheet">
 
+    <!-- Search -->
+    <link href="{{ asset('front/css/search.css') }}" rel="stylesheet">
+    <!-- Slider -->
+    <link href="{{ asset('front/css/slider.css') }}" rel="stylesheet">
+    <!-- Content -->
+    <link href="{{ asset('front/css/content.css') }}" rel="stylesheet">
+
+
+
 </head>
 
 <body>

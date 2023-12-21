@@ -16,7 +16,7 @@
                 <div class="card-header">
                     <div class="card-head-row">
                         <div class="card-title">Data Iklan</div>
-                        {{-- <a href="{{ route ('iklan.create') }}" class="btn btn-primary ml-auto"> <i class="fas fa-plus"></i> Tambah Iklan</a> --}}
+                        <a href="{{ route ('iklan.create') }}" class="btn btn-primary ml-auto"> <i class="fas fa-plus"></i> Tambah Iklan</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -26,7 +26,7 @@
                     </div>
                     @endif
                     <div class="table-responsive">
-                        <table class="table table-bordered">
+                        <table id="example1" class="table table-bordered">
                             <thead>
                                 <tr>
                                     <th>Nomor</th>

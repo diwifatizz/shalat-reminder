@@ -28,7 +28,7 @@
                     @endif
 
 					<div class="table-responsive">
-					<table class="table table-bordered">
+					<table id="example1" class="table table-bordered">
                         <thead>
                             <tr>
                                 <th> id</th>

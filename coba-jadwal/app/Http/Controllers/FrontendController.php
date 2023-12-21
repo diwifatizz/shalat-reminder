@@ -60,19 +60,6 @@ class FrontendController extends Controller
         ]);
     }
 
-    public function kontak()
-    {
-        $category = kategori::all();
-        $artikel = Artikel::all();
-        $slide = Slide::all();
-
-        return view('front.kontak', [
-            'category' => $category,
-            'artikel' => $artikel,
-            'slide' => $slide
-        ]);
-    }
-
     public function notfound()
     {
         $category = kategori::all();

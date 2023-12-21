@@ -1,14 +1,30 @@
-<div class="container-fluid bg-light">
+<div class="container-fluid bg-light embed-responsive">
     <div class="container px-0">
         <nav class="navbar navbar-expand-xl navbar-light bg-transparent">
-            <a href="#" class="navbar-brand mt-3">
+            <div class="collapse navbar-collapse bg-transparent py-3" id="navbarCollapse">
+                <div class="col-md-2">
+                <div class="konten">
+                    <div class="konten__container">
+                        <p class="konten__container__text">
+                            <img src="{{ asset('front/img/logo.png') }}" alt="Deskripsi Gambar" style="width: 50px;">
+                        </p>
+                        <ul class="konten__container__list">
+                            <li class="konten__container__list__item">A r t i k e l</li>
+                            <li class="konten__container__list__item">Jam Sholat</li>
+                            <li class="konten__container__list__item">Asmaul-Husna</li>
+                            <li class="konten__container__list__item">SholatReminder</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            {{-- <a href="#" class="navbar-brand mt-3">
                 <p class="text-primary mb-6" style="line-height: 0; font-size:28px;">ShalatReminder.net</p>
                 <small class="text-body fw-normal" style="letter-spacing: 2px;">Jadwal-shalat dan artikel</small>
             </a>
             <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars text-primary"></span>
-            </button>
-            <div class="collapse navbar-collapse bg-transparent py-3" id="navbarCollapse">
+            </button> --}}
+            
                 <div class="navbar-nav mx-auto border-top">
                     <a href="/" class="nav-item nav-link">Home</a>
                     <a href="{{ route('jadwalshalat.index') }}" class="nav-item nav-link">JadwalShalat</a>
