@@ -422,24 +422,98 @@
 /* Jadwal Shalat */
 
 :root {
-    --bg-color: #f0f0f0; /* Biru Muda yang Lembut */
-    --second-bg-color: #000; /* Hitam */
-    --text-color: #333; /* Warna Teks yang Lebih Gelap */
-    --black-color: #000; /* Hitam */
-    --light-purple-color: #8a8cff; /* Warna Ungu Tua yang Lembut */
-    --purple-color: #4d4dff; /* Warna Ungu yang Lebih Tua */
-    --main-color: #2979ff; /* Biru Langit yang Lebih Cerah */
-    --second-color: #082b4f; /* Hitam */
-    --yellow-color: #ffd54f; /* Kuning yang Lembut */
+    --bg-color: #f8f4f9;
+    --second-bg-color: #f0e9f7;
+    --text-color: #2a106d;
+    --black-color: #393541;
+    --light-purple-color: #bca9ea;
+    --purple-color: #8663e1;
+    --main-color: #2a106d;
+    --second-color: #72bbf0;
+    --yellow-color: #f6c33e;
+}
+
+/* Home */
+#home-section {
+    padding: 8rem 0 0 9%;
+    text-align: left;
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.dalil-home {
+    background: var(--second-color);
+    border-radius: 30px;
+    padding: 0.8rem 1.5rem;
+    margin-bottom: 2rem;
+    width: fit-content;
+}
+.h2-dalil {
+    font-size: 1.4rem;
+    color: white;
+}
+.h1-dash {
+    color: #2a106b;
+    font-size: 2.25rem;
+    font-weight: 600;
+    line-height: 121.5%;
+    margin-bottom: 1.5rem;
+}
+.hr-dash {
+    border: 1px solid #dbd3ef;
+    width: 15rem;
+}
+.p-dash {
+    color: rgba(42, 16, 107, 0.6);
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 137.5%;
+    margin-bottom: 5rem;
+    margin-top: 2rem;
+}
+.home-img {
+    display: flex;
+    position: relative;
+    margin-bottom: -6rem;
+}
+.img-full {
+    width: 58vw;
+    display: block;
+}
+.img-mobile {
+    display: none;
+}
+/* Jadwal Dashboard */
+#jadwal-dash {
+    padding: 8rem 9% 5rem;
+    text-align: left;
+    background: var(--second-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+}
+.jadwal-img img {
+    width: 40vw;
+}
+
+/* Asmaul Dashboard */
+#asmaul-dash {
+    padding: 8rem 9% 5rem;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+}
+.asmaul-img img {
+    width: 40vw;
 }
 
 section {
-    /* background: var(--bg-color); */
-    min-height: 80vh;
-}
-
-section {
-    /* background: var(--bg-color); */
+    background: var(--bg-color);
     min-height: 80vh;
 }
 #section-shalat {
@@ -472,10 +546,12 @@ section {
     border-radius: 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .table {
     width: 100%;
     border-collapse: collapse;
 }
+
 .table tbody tr:nth-child(even) {
     background: #f0ecf4;
 }
@@ -548,7 +624,7 @@ tbody tr td:first-child {
 }
 
 .btn-tampilkan {
-    margin-top: 10px; /* Memberikan jarak antara tombol dan select */
+    margin-top: 20px; /* Memberikan jarak antara tombol dan select */
     padding: 10px 10px; /* Memberikan padding agar tombol terlihat lebih baik */
     background-color: var(--main-color);
     color: white;
@@ -559,7 +635,7 @@ tbody tr td:first-child {
 }
 
 .btn-tampilkan:hover {
-    background-color: var(--purple-color); /* Warna yang berbeda saat hover */
+    background-color: var(--second-color); /* Warna yang berbeda saat hover */
 }
 
 /*css untuk text corousel*/

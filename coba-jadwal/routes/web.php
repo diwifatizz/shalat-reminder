@@ -7,7 +7,6 @@ use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\AsmaulController;
-use App\Http\Controllers\CityController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\SlideController;
 use App\Http\Controllers\IklanController;
@@ -44,35 +43,33 @@ Route::get('/kontak', [FrontendController::class, 'kontak'])->name('kontak');
 
 Route::get('/notfound', [FrontendController::class, 'notfound'])->name('notfound');
 
-
 Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
-
-
-Route::resource('kategori', kategoriController::class);
-
-Route::resource('artikel', ArtikelController::class);
-
-Route::resource('slide', SlideController::class);
-
-
-Route::resource('iklan', IklanController::class);
-
-//route jadwal di admin ni
-// Route::get('Jadwal', [SholatController::class, 'index'])->name('Jadwal.index');
 
 Route::get('/asmaul-husna', [AsmaulController::class, 'index'])->name('asmaul-husna.index');
 
+// start route untuk di resoursce admin
+Route::resource('kategori', kategoriController::class);
+Route::resource('artikel', ArtikelController::class);
+Route::resource('slide', SlideController::class);
+Route::resource('iklan', IklanController::class);
+// end route
+
+//start route calender jadwal shalat di frontend
 Route::get('/jadwalshalat', [JadwalShalatController::class, 'index'])->name('jadwalshalat.index');
+Route::post('/getKabupatenJadwalShalat', [JadwalShalatController::class, 'getKabupaten'])->name('getKabupatenJadwalShalat');
+//end route calender jadwal shalat
 
-
+//start route calender jadwal shalat di frontend
+Route::get('Jadwal', [SholatController::class, 'index'])->name('Jadwal.index');
+Route::post('/getKabupatenSholat', [SholatController::class, 'getKabupaten'])->name('getKabupatenSholat');
+//end route calender jadwal shalat
 
 //route untuk file manage di dalam views-back-artikel-(create dan edit)
-
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 
-Route::get('/fetch-and-save-cities', [CityController::class, 'fetchAndSaveCities']);
+// Route::get('/fetch-and-save-cities', [CityController::class, 'fetchAndSaveCities']);
 
 Route::get('/fetch-data/{id_lokasi}/{tahun}/{bulan}', [SholatController::class, 'fetchDataAndSaveToDatabase']);
 Route::put('/artikel/update-status/{artikel}', [ArtikelController::class, 'updateStatus'])->name('artikel.update-status');

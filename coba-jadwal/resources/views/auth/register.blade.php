@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>CodePen - Glassmorphism Login form</title>
+    <title>Reigister</title>
     <link rel="stylesheet" href="back/css/style.css">
     <!-- Tambahkan tag skrip Ionicons jika belum ada -->
     <script src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'></script>
@@ -59,6 +59,7 @@
                     </div>
 
                     <div class="inputbox">
+<<<<<<< HEAD
                         <ion-icon name="lock-closed-outline"></ion-icon>
                         <input id="level" type="text" class="form-control @error('level') is-invalid @enderror" name="level" value="{{ old('level') }}" required autocomplete="level" autofocus>
                         <label>Level</label>
@@ -67,6 +68,20 @@
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
+=======
+                        <ion-icon name="person-outline"></ion-icon>
+                        <label for="level" class="col-md-4 col-form-label text-md-end"></label>
+                        <div class="col-md-6">
+                            <select id="level" name="level" class="form-control @error('level') is-invalid @enderror" required autocomplete="level" autofocus>
+                                <option value="penulis" {{ old('level') == 'penulis' ? 'selected' : '' }}>Penulis</option>
+                            </select>
+                            @error('level')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+>>>>>>> e953c84ce627f452a3b5c2b44591fab35b074564
                     </div>
 
                     <div class="row mb-0">
