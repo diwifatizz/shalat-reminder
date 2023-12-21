@@ -42,6 +42,8 @@ Route::get('/kontak', [FrontendController::class, 'kontak'])->name('kontak');
 
 Route::get('/notfound', [FrontendController::class, 'notfound'])->name('notfound');
 
+Route::get('/kategori/{slug}', [FrontendController::class, 'kategori'])->name('kategori');
+
 Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
 
 Route::get('/asmaul-husna', [AsmaulController::class, 'index'])->name('asmaul-husna.index');
@@ -58,7 +60,7 @@ Route::get('/jadwalshalat', [JadwalShalatController::class, 'index'])->name('jad
 Route::post('/getKabupatenJadwalShalat', [JadwalShalatController::class, 'getKabupaten'])->name('getKabupatenJadwalShalat');
 //end route calender jadwal shalat
 
-//start route calender jadwal shalat di frontend
+//start route calender jadwal shalat di backend
 Route::get('Jadwal', [SholatController::class, 'index'])->name('Jadwal.index');
 Route::post('/getKabupatenSholat', [SholatController::class, 'getKabupaten'])->name('getKabupatenSholat');
 //end route calender jadwal shalat

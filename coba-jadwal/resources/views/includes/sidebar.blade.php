@@ -86,12 +86,12 @@
                 </li>
 
                 
-               {{-- <li class="nav-item">
+               <li class="nav-item">
                 <a href="{{ route('Jadwal.index') }}">
                     <i class="fas fa-archway"></i>
                     <p>Jadwal-shalat</p>
                 </a>
-               </li> --}}
+               </li> 
 
                <li class="nav-section">
                 <span class="sidebar-mini-icon">

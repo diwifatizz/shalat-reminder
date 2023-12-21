@@ -36,6 +36,7 @@
 			</div>
 		</div>
 		<div class="col-sm-6 col-md-3">
+			<a href="{{ route('artikel.index') }}">
 			<div class="card card-stats card-round">
 				<div class="card-body">
 					<div class="row align-items-center">
@@ -53,6 +54,7 @@
 					</div>
 				</div>
 			</div>
+		</a>
 		</div>
 		<div class="col-sm-6 col-md-3">
 			<div class="card card-stats card-round">

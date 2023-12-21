@@ -40,7 +40,8 @@ class ArtikelController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'judul' => 'required'
+            'judul' => 'required',
+            'is_active' => 'required', // Pastikan status diisi
         ]);
 
         $data = $request->all();
@@ -49,8 +50,11 @@ class ArtikelController extends Controller
         $data['views'] = 0;
         $data['gambar_artikel'] = $request->file('gambar_artikel')->store('artikel');
 
-        Artikel::create($data);
 
+        // Set status artikel dari dropdown
+        $data['is_active'] = $request->input('is_active');
+
+        Artikel::create($data);
 
         Alert::success('Success', 'Data berhasil ditambahkan');
         return redirect()->route('artikel.index');
@@ -82,6 +86,7 @@ class ArtikelController extends Controller
     /**
      * Update the specified resource in storage.
      */
+
     public function update(Request $request, string $id)
     {
         // $this->validate($request, [
@@ -97,8 +102,8 @@ class ArtikelController extends Controller
                 'kategori_id' => $request->kategori_id,
                 'is_active' => $request->is_active,
                 'user_id' => Auth::id(),
-            ]);
 
+            ]);
 
             Alert::warning('Success', 'Data berhasil diupdate');
             return redirect()->route('artikel.index');
@@ -112,10 +117,9 @@ class ArtikelController extends Controller
                 'kategori_id' => $request->kategori_id,
                 'is_active' => $request->is_active,
                 'user_id' => Auth::id(),
+
                 'gambar_artikel' => $request->file('gambar_artikel')->store('artikel'),
             ]);
-
-
 
             Alert::warning('Success', 'Data berhasil diupdate');
             return redirect()->route('artikel.index');
