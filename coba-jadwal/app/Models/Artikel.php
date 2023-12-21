@@ -16,7 +16,7 @@ class Artikel extends Model
     ];
 
     protected $hidden = [];
-    
+
 
     public function kategori()
     {

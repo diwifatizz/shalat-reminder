@@ -1,44 +1,44 @@
 @extends('front.layouts.frontend')
 
 @section('content')
-    @include('front.includes.js')
+@include('front.includes.js')
 
-    <!-- Single Product Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row g-4">
-                <div class="col-lg-8">
-                    <div class="mb-4">
-                        <a href="#" class="h1 display-5">{{ $artikel->judul }}.</a>
+<!-- Single Product Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="mb-4">
+                    <a href="#" class="h1 display-5">{{ $artikel->judul }}.</a>
+                </div>
+                <div class="position-relative rounded overflow-hidden mb-3">
+                    <img src="{{ asset('uploads/' . $artikel->gambar_artikel) }}" class="img-zoomin img-fluid rounded w-100" alt="">
+                    <div class="position-absolute text-white px-4 py-2 bg-primary rounded" style="top: 20px; right: 20px;">
+                        {{ $artikel->kategori->nama_kategori }}
                     </div>
-                    <div class="position-relative rounded overflow-hidden mb-3">
-                        <img src="{{ asset('uploads/' . $artikel->gambar_artikel) }}" class="img-zoomin img-fluid rounded w-100" alt="">
-                        <div class="position-absolute text-white px-4 py-2 bg-primary rounded" style="top: 20px; right: 20px;">
-                            {{ $artikel->kategori->nama_kategori }}
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-start">
-                        <a href="#" class="text-muted link-hover me-3"><i class="fa fa-user"></i>&nbsp;{{ $artikel->users->name }}</a>
-                        <a href="#" class="text-muted link-hover">
-                            <i class="fa fa-calendar"></i> {{\Carbon\Carbon::parse($artikel->created_at)->isoFormat('dddd, D MMMM Y')}}
-                        </a>
-                    </div> <br>
+                </div>
+                <div class="d-flex justify-content-start">
+                    <a href="#" class="text-muted link-hover me-3"><i class="fa fa-user"></i>&nbsp;{{ $artikel->users->name }}</a>
+                    <a href="#" class="text-muted link-hover">
+                        <i class="fa fa-calendar"></i> {{\Carbon\Carbon::parse($artikel->created_at)->isoFormat('dddd, D MMMM Y')}}
+                    </a>
+                </div> <br>
 
-                    <div id='post-toc'>
-                        <div class="col-md-6">
-                            <div class="accordion-item active">
-                                <h1 class="accordion-header" id="heading-One">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-One" aria-expanded="true" aria-controls="collapse-One">
-                                        Daftar Isi
-                                    </button>
-                                </h1>
-                                <div id="collapse-One" class="accordion-collapse collapse show" aria-labelledby="heading-One" data-bs-parent="#accordionExample1">
-                                    <div class="accordion-body pb-3" style="background: #f2f4f9">
-                                        <ul id='bwstoc'></ul>
-                                    </div>
+                <div id='post-toc'>
+                    <div class="col-md-6">
+                        <div class="accordion-item active">
+                            <h1 class="accordion-header" id="heading-One">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-One" aria-expanded="true" aria-controls="collapse-One">
+                                    Daftar Isi
+                                </button>
+                            </h1>
+                            <div id="collapse-One" class="accordion-collapse collapse show" aria-labelledby="heading-One" data-bs-parent="#accordionExample1">
+                                <div class="accordion-body pb-3" style="background: #f2f4f9">
+                                    <ul id='bwstoc'></ul>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
                         <p class="my-4" style="text-align: justify;">{!! $artikel->body !!}</p>
                         <script>

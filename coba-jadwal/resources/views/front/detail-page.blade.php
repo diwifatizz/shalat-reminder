@@ -24,14 +24,14 @@
                                 <div class="row g-4 align-items-center">
                                     <div class="row g-4">
                                         @foreach ($artikel as $singleArtikel)
-                                            <div class="col-3">
-                                                <img src="{{ asset('uploads/'. $singleArtikel->gambar_artikel ) }}" class="img-fluid w-100 rounded" alt="">
-                                            </div>
-                                            <div class="col-9">
-                                                <h3>{{ $singleArtikel->judul }}</h3>
-                                                <p class="mb-0">{!! \Illuminate\Support\Str::limit($singleArtikel->body, 200) !!} </p>
-                                                <a href="{{ route('detail-artikel', $singleArtikel->slug) }}">Selengkapnya</a>
-                                            </div>
+                                        <div class="col-3">
+                                            <img src="{{ asset('uploads/'. $singleArtikel->gambar_artikel ) }}" class="img-fluid w-100 rounded" alt="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h3>{{ $singleArtikel->judul }}</h3>
+                                            <p class="mb-0">{!! \Illuminate\Support\Str::limit($singleArtikel->body, 200) !!} </p>
+                                            <a href="{{ route('detail-artikel', $singleArtikel->slug) }}">Selengkapnya</a>
+                                        </div>
                                         @endforeach
                                         {{-- pagination --}}
                                         <div class="d-flex justify-content-end">

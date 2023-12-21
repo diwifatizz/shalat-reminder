@@ -12,6 +12,7 @@ use App\Http\Controllers\SlideController;
 use App\Http\Controllers\IklanController;
 use App\Http\Controllers\JadwalShalatController;
 use App\Http\Controllers\SholatController;
+use App\Models\Artikel;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,8 @@ Route::get('/detail-page/{category}', [FrontendController::class, 'categories'])
 
 Route::get('/notfound', [FrontendController::class, 'notfound'])->name('notfound');
 
+Route::get('/kategori/{slug}', [FrontendController::class, 'kategori'])->name('kategori');
+
 Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
 
 Route::get('/asmaul-husna', [AsmaulController::class, 'index'])->name('asmaul-husna.index');
@@ -58,7 +61,7 @@ Route::get('/jadwalshalat', [JadwalShalatController::class, 'index'])->name('jad
 Route::post('/getKabupatenJadwalShalat', [JadwalShalatController::class, 'getKabupaten'])->name('getKabupatenJadwalShalat');
 //end route calender jadwal shalat
 
-//start route calender jadwal shalat di frontend
+//start route calender jadwal shalat di backend
 Route::get('Jadwal', [SholatController::class, 'index'])->name('Jadwal.index');
 Route::post('/getKabupatenSholat', [SholatController::class, 'getKabupaten'])->name('getKabupatenSholat');
 //end route calender jadwal shalat
@@ -70,4 +73,5 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 
 // Route::get('/fetch-and-save-cities', [CityController::class, 'fetchAndSaveCities']);
 
-// Route::get('/fetch-data/{id_lokasi}/{tahun}/{bulan}', [SholatController::class, 'fetchDataAndSaveToDatabase']);
+Route::get('/fetch-data/{id_lokasi}/{tahun}/{bulan}', [SholatController::class, 'fetchDataAndSaveToDatabase']);
+Route::put('/artikel/update-status/{artikel}', [ArtikelController::class, 'updateStatus'])->name('artikel.update-status');

@@ -13,9 +13,9 @@ class FrontendController extends Controller
     public function index()
     {
         $category = kategori::all();
-        $artikel = Artikel::all();
-        $slide = Slide::all();
-
+        // Filter artikel yang memiliki status is_active '1' (Publish)
+        $artikel = Artikel::where('is_active', '1')->get();
+        $slide = Slide::where('status', '1')->get();
 
         return view('front.home', [
             'category' => $category,
@@ -27,10 +27,17 @@ class FrontendController extends Controller
 
     public function detail($slug)
     {
-        $artikel = Artikel::where('slug', $slug)->firstOrFail();
+        $artikel = Artikel::where('slug', $slug)
+            ->where('is_active', '1')
+            ->firstOrFail();
         $category = kategori::all();
-        $iklanA = Iklan::where('id', '1')->first();
-        $postinganLama = Artikel::orderBy('created_at', 'asc')->take('3')->get();
+        $iklanA = Iklan::where('id', '1')
+            ->where('status', '1')
+            ->first();
+        $postinganLama = Artikel::where('is_active', '1') // Filter hanya artikel yang is_active '1'
+            ->orderBy('created_at', 'asc')
+            ->take('3')
+            ->get();
 
         return view('front.artikel.detail-artikel', [
             'artikel' => $artikel,
@@ -52,6 +59,8 @@ class FrontendController extends Controller
                 ->orWhere('body', 'like', '%' . request('search') . '%');
         }
 
+        // Filter artikel yang memiliki status is_active '1' (Publish)
+        $artikel->where('is_active', '1');
         return view('front.detail-page', [
             'category' => $category,
             'artikel' => $artikel->paginate(5)->withQueryString(),
@@ -73,17 +82,18 @@ class FrontendController extends Controller
         ]);
     }
 
-    public function categories($category) 
+    public function kategori($slug)
     {
-        $artikel = Artikel::where('category', $category)->get();
-        $slide = Slide::all();
         $category = kategori::all();
+        $kategori = kategori::where('slug', $slug)->firstOrFail();
+        $artikelByKategori = Artikel::where('kategori_id', $kategori->id)
+            ->where('is_active', '1')
+            ->paginate(5);
 
-        return view('detail-page', [
+        return view('front.kategori', [
             'category' => $category,
-            'artikel' => $artikel,
-            'slide' => $slide
+            'kategori' => $kategori,
+            'artikelByKategori' => $artikelByKategori
         ]);
-
     }
 }
