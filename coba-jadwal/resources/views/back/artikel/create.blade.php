@@ -43,13 +43,13 @@
                             <label for="gambar">Gambar Artikel</label>
                             <input type="file" name="gambar_artikel" class="form-control">
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="status">Status</label>
                             <select name="is_active" class="form-control">
                                 <option value="1">Publish</option>
                                 <option value="0">Draft</option>
                             </select>
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <button class="btn btn-primary" type="submit">Save</button>
                             <button class="btn btn-danger" type="reset">Reset</button>

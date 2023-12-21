@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('gambar_artikel');
             $table->boolean('is_active');
             $table->integer('views');
+            $table->enum('status', ['publish', 'draft'])->default('publish');
             $table->timestamps();
         });
     }

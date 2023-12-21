@@ -36,61 +36,69 @@
 			</div>
 		</div>
 		<div class="col-sm-6 col-md-3">
-			<div class="card card-stats card-round">
-				<div class="card-body">
-					<div class="row align-items-center">
-						<div class="col-icon">
-							<div class="icon-big text-center icon-info bubble-shadow-small">
-								<i class="far fa-newspaper"></i>
+			<a href="{{ url('/artikel') }}">
+				<div class="card card-stats card-round">
+					<div class="card-body">
+						<div class="row align-items-center">
+							<div class="col-icon">
+								<div class="icon-big text-center icon-info bubble-shadow-small">
+									<i class="far fa-newspaper"></i>
+								</div>
 							</div>
-						</div>
-						<div class="col col-stats ml-3 ml-sm-0">
-							<div class="numbers">
-								<p class="card-category">Artikel</p>
-								<h4 class="card-title">{{ $artikel }}</h4>
+							<div class="col col-stats ml-3 ml-sm-0">
+								<div class="numbers">
+									<p class="card-category">Artikel</p>
+									<!-- Tambahkan tag <a> di bawah ini untuk membuat tautan ke halaman artikel -->
+									<h4 class="card-title">{{ $artikel }}</h4>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</a>
+		</div>
+
+		<div class="col-sm-6 col-md-3">
+			<a href="{{ url('/kategori') }}">
+				<div class="card card-stats card-round">
+					<div class="card-body">
+						<div class="row align-items-center">
+							<div class="col-icon">
+								<div class="icon-big text-center icon-success bubble-shadow-small">
+									<i class="fas fa-tags"></i>
+								</div>
+							</div>
+							<div class="col col-stats ml-3 ml-sm-0">
+								<div class="numbers">
+									<p class="card-category">Kategori</p>
+									<h4 class="card-title">{{ $kategori }}</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</a>
 		</div>
 		<div class="col-sm-6 col-md-3">
-			<div class="card card-stats card-round">
-				<div class="card-body">
-					<div class="row align-items-center">
-						<div class="col-icon">
-							<div class="icon-big text-center icon-success bubble-shadow-small">
-								<i class="fas fa-tags"></i>
+			<a href="{{ url('/iklan') }}">
+				<div class="card card-stats card-round">
+					<div class="card-body">
+						<div class="row align-items-center">
+							<div class="col-icon">
+								<div class="icon-big text-center icon-info bubble-shadow-small">
+									<i class="flaticon-interface-6"></i>
+								</div>
 							</div>
-						</div>
-						<div class="col col-stats ml-3 ml-sm-0">
-							<div class="numbers">
-								<p class="card-category">Kategori</p>
-								<h4 class="card-title">{{ $kategori }}</h4>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-6 col-md-3">
-			<div class="card card-stats card-round">
-				<div class="card-body">
-					<div class="row align-items-center">
-						<div class="col-icon">
-							<div class="icon-big text-center icon-info bubble-shadow-small">
-								<i class="flaticon-interface-6"></i>
-							</div>
-						</div>
-						<div class="col col-stats ml-3 ml-sm-0">
-							<div class="numbers">
-								<p class="card-category">iklan</p>
-								<h4 class="card-title">{{ $iklan }}</h4>
+							<div class="col col-stats ml-3 ml-sm-0">
+								<div class="numbers">
+									<p class="card-category">iklan</p>
+									<h4 class="card-title">{{ $iklan }}</h4>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</a>
 		</div>
 	</div>
 </div>

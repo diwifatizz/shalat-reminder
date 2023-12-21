@@ -47,13 +47,13 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="status">Status </label>
                             <select name="is_active" class="form-control">
                                 <option value="1" {{ $artikel->is_active ==  '1' ? 'selected' : '' }}>Publish</option>
                                 <option value="0" {{ $artikel->is_active ==  '0' ? 'selected' : '' }}>Draft</option>
                             </select>
-                        </div>
+                        </div> -->
 
                         <div class="form-group">
                             <label for="gambar">Gambar Artikel </label>

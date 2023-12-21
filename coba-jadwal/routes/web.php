@@ -13,6 +13,7 @@ use App\Http\Controllers\SlideController;
 use App\Http\Controllers\IklanController;
 use App\Http\Controllers\JadwalShalatController;
 use App\Http\Controllers\SholatController;
+use App\Models\Artikel;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,3 +75,4 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 Route::get('/fetch-and-save-cities', [CityController::class, 'fetchAndSaveCities']);
 
 Route::get('/fetch-data/{id_lokasi}/{tahun}/{bulan}', [SholatController::class, 'fetchDataAndSaveToDatabase']);
+Route::put('/artikel/update-status/{artikel}', [ArtikelController::class, 'updateStatus'])->name('artikel.update-status');
