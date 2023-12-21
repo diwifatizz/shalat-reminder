@@ -19,6 +19,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  /* padding: 1rem 15% 5rem; */
   opacity: 0;
   transition: opacity 0.4s ease-in-out;
   display: inline-block;

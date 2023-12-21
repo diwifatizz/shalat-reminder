@@ -23,6 +23,13 @@
 <!-- Datatables -->
 <script src="{{ asset('back/js/plugin/datatables/datatables.min.js')}}"></script>
 
+<script>
+    $(function () {
+    $("#example1").DataTable();
+    });
+</script>
+
+
 <!-- Bootstrap Notify -->
 <script src="{{ asset('back/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
 

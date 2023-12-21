@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>CodePen - Glassmorphism Login form</title>
+    <title>Login</title>
     <link rel="stylesheet" href="back/css/style.css">
     <!-- Add the Ionicons script tags if not already included -->
     <script src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'></script>

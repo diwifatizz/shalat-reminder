@@ -8,9 +8,9 @@
             <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars text-primary"></span>
             </button>
-            <div class="collapse navbar-collapse bg-transparent py-3" id="navbarCollapse">
+            <div class="collapse navbar-collapse bg-light py-3" id="navbarCollapse">
                 <div class="navbar-nav mx-auto border-top">
-                    <a href="/" class="nav-item nav-link">Home</a>
+                    <a href="/" class="nav-item nav-link active">Home</a>
                     <a href="{{ route('jadwalshalat.index') }}" class="nav-item nav-link">JadwalShalat</a>
                     <a href="{{ route('detail-page') }}" class="nav-item nav-link">Artikel</a>
                     <a href="{{ route('asmaul-husna.index') }}" class="nav-item nav-link">Asmaul-Husna</a>
