@@ -2,108 +2,99 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\sholat;
+
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
+use GuzzleHttp\Client;
+use App\Models\Province;
+use App\Models\Regency;
+use App\Models\prayer;
 
 class SholatController extends Controller
 {
 
-    public function fetchDataAndSaveToDatabase($id_lokasi, $tahun, $bulan)
+    public function index(Request $request)
     {
-        $url = "https://api.myquran.com/v1/sholat/jadwal/{$id_lokasi}/{$tahun}/{$bulan}";
+        // Mendapatkan data provinsi dan kabupaten/kota
+        $provinces = Province::all();
+        $regencies = Regency::all();
 
-        // Mengambil data dari API
-        $response = Http::get($url);
+        $year = $request->input('year', date('Y'));
+        $month = $request->input('month', date('m'));
+        $day = $request->input('day', date('d'));
+        $city = $request->input('city', 'pekanbaru');
 
-        // Memeriksa apakah request berhasil atau tidak
-        if ($response->successful()) {
-            $data = $response->json()['data']['jadwal'];
-
-            // Simpan data ke dalam database
-            foreach ($data as $jadwal) {
-                $data =  [
-                    'lokasi' => $id_lokasi,
-                    'tanggal' => $jadwal['date'],
-                    'imsak' => $jadwal['imsak'],
-                    'subuh' => $jadwal['subuh'],
-                    'terbit' => $jadwal['terbit'],
-                    'dhuha' => $jadwal['dhuha'],
-                    'dzuhur' => $jadwal['dzuhur'],
-                    'ashar' => $jadwal['ashar'],
-                    'maghrib' => $jadwal['maghrib'],
-                    'isya' => $jadwal['isya'],
-                ];
-
-                Sholat::updateOrCreate(
-                    $data
-                );
-            }
-
-            // Berhasil mendapatkan dan menyimpan data
-            return response()->json(['message' => 'Data fetched and saved successfully']);
-        } else {
-            // Jika request tidak berhasil, Anda dapat menangani kesalahan di sini
-            return response()->json(['error' => 'Failed to fetch data'], 500);
+        // Menyesuaikan relasi provinsi dengan kabupaten/kota
+        $selectedProvince = $request->input('province');
+        if ($selectedProvince) {
+            $regencies = Province::find($selectedProvince)->regencies;
         }
-    }
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        // $jadwalshalat = sholat::all();
 
-        // return view('back.Jadwal.index', [
-        //     'jadwalshalat' => $jadwalshalat
-        // ]);
-    }
+        // Menyesuaikan jadwal shalat
+        $client = new Client();
+        $response = $client->get("https://api.aladhan.com/v1/calendarByCity", [
+            'query' => [
+                'city' => $city,
+                'country' => 'Indonesia',
+                'day' => $day,
+                'month' => $month,
+                'year' => $year,
+            ],
+        ]);
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+        $data = json_decode($response->getBody(), true);
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        // Menyimpan jadwal shalat ke database
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(sholat $sholat)
-    {
-        //
-    }
+        foreach ($data['data'] as $dataJadwal) {
+            $formattedDate = date('Y-m-d', strtotime($dataJadwal['date']['gregorian']['date']));
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(sholat $sholat)
-    {
-        //
-    }
+            // Pastikan $selectedProvince tidak null sebelum menyimpan
+            $regencyId = $selectedProvince ? $selectedProvince : 1; // Ganti 1 dengan nilai default yang sesuai
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, sholat $sholat)
-    {
-        //
-    }
+            // Hilangkan informasi zona waktu dari nilai waktu
+            $fajrTime = date('H:i:s', strtotime($dataJadwal['timings']['Fajr']));
+            $sunriseTime = date('H:i:s', strtotime($dataJadwal['timings']['Sunrise']));
+            $dhuhrTime = date('H:i:s', strtotime($dataJadwal['timings']['Dhuhr']));
+            $asrTime = date('H:i:s', strtotime($dataJadwal['timings']['Asr']));
+            $sunsetTime = date('H:i:s', strtotime($dataJadwal['timings']['Sunset']));
+            $maghribTime = date('H:i:s', strtotime($dataJadwal['timings']['Maghrib']));
+            $ishaTime = date('H:i:s', strtotime($dataJadwal['timings']['Isha']));
+            $imsakTime = date('H:i:s', strtotime($dataJadwal['timings']['Imsak']));
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(sholat $sholat)
+            prayer::create([
+                'date' => $formattedDate,
+                'regency_id' => $regencyId,
+                'fajr' => $fajrTime,
+                'sunrise' => $sunriseTime,
+                'dhuhr' => $dhuhrTime,
+                'asr' => $asrTime,
+                'sunset' => $sunsetTime,
+                'maghrib' => $maghribTime,
+                'isha' => $ishaTime,
+                'imsak' => $imsakTime,
+            ]);
+        }
+
+        return view('back.Jadwal.index', [
+            'jadwal' => $data['data'],
+            'year' => $year,
+            'month' => $month,
+            'day' => $day,
+            'city' => $city,
+            'provinces' => $provinces,
+            'regencies' => $regencies,
+            'selectedProvince' => $selectedProvince,
+        ]);
+    }
+    public function getKabupaten(Request $request)
     {
-        //
+        $id_provinsi = $request->id_provinsi;
+
+
+        $regencies = Regency::where('province_id', $id_provinsi)->get();
+
+        foreach ($regencies as $regency) {
+            echo "<option value ='$regency->name'>$regency->name</option>";
+        }
     }
 }

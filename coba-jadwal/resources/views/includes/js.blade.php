@@ -28,6 +28,13 @@
     });
 </script>
 
+<script>
+    $(function () {
+    $("#example1").DataTable();
+    });
+</script>
+
+
 <!-- Bootstrap Notify -->
 <script src="{{ asset('back/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
 

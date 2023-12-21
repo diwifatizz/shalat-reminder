@@ -7,6 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
+    @yield('meta')
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -94,6 +95,7 @@
 
     <!-- Template Javascript -->
     <script src="{{ asset('front/js/main.js') }}"></script>
+    @yield('script')
 </body>
 
 </html>
