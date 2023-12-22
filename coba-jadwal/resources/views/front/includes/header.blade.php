@@ -35,6 +35,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @foreach ($category as $cat)
                             <a class="dropdown-item" href="{{ route('kategori', $cat->slug) }}">{{ $cat->nama_kategori }}</a>
+                            {{-- <a class="dropdown-item" href="{{ route('detail-page', ['kategori' => $cat->nama_kategori]) }}">{{ $cat->nama_kategori }}</a> --}}
                             @endforeach
                         </div>
                     </div>
