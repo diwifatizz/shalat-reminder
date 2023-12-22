@@ -1,4 +1,4 @@
-<div class="sidebar sidebar-style-2">			
+<div class="sidebar sidebar-style-2">
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
         <div class="sidebar-content">
             <div class="user">
@@ -10,12 +10,12 @@
                         <span>
                             {{ Auth::user()->name }}
                             <span class="user-level">{{ Auth::user()->level }}</span>
-                        
+
                         </span>
                     </a>
-                   <div class="clearfix"></div>
+                    <div class="clearfix"></div>
 
-                     {{-- <div class="collapse in" id="collapseExample">
+                    {{-- <div class="collapse in" id="collapseExample">
                         <ul class="nav">
                             <li>
                                 <a href="#profile">
@@ -48,7 +48,7 @@
                     <h4 class="text-section">Master Data</h4>
                 </li>
 
-                
+
                 <li class="nav-item">
                     <a href="{{ route('artikel.index') }}">
                         <i class="fas fa-book"></i>
@@ -62,7 +62,7 @@
                         <p>Slide Banner</p>
                     </a>
                 </li>
-    
+
                 <li class="nav-item">
                     <a href="{{ route('iklan.index') }}">
                         <i class="fas fa-link  "></i>
@@ -70,13 +70,13 @@
                     </a>
                 </li>
                 @if (Auth::user()->level == 'admin')
-        
-               <li class="nav-item">
-                <a href="{{ route('kategori.index') }}">
-                    <i class="fas fa-desktop"></i>
-                    <p>Kategori</p>
-                </a>
-               </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('kategori.index') }}">
+                        <i class="fas fa-desktop"></i>
+                        <p>Kategori</p>
+                    </a>
+                </li>
 
                 <li class="nav-section">
                     <span class="sidebar-mini-icon">
@@ -85,32 +85,46 @@
                     <h4 class="text-section">Master Jadwal</h4>
                 </li>
 
-                
-               <li class="nav-item">
-                <a href="{{ route('Jadwal.index') }}">
-                    <i class="fas fa-archway"></i>
-                    <p>Jadwal-shalat</p>
-                </a>
-               </li> 
 
-               <li class="nav-section">
-                <span class="sidebar-mini-icon">
-                    <i class="fa fa-ellipsis-h"></i>
-                </span>
-                <h4 class="text-section">Back</h4>
-            </li>
-         
-               @endif
                 <li class="nav-item">
-					<a href="{{ route('logout') }}" onclick="event.preventDefault();
+                    <a href="{{ route('Jadwal.index') }}">
+                        <i class="fas fa-archway"></i>
+                        <p>Jadwal-shalat</p>
+                    </a>
+                </li>
+
+                <li class="nav-section">
+                    <span class="sidebar-mini-icon">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </span>
+                    <h4 class="text-section">Sign-in</h4>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('user') }}">
+                        <i class="fas fa-users"></i>
+                        <p>Users</p>
+                    </a>
+                </li>
+
+                <li class="nav-section">
+                    <span class="sidebar-mini-icon">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </span>
+                    <h4 class="text-section">Back</h4>
+                </li>
+
+                @endif
+                <li class="nav-item">
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-						<i class="fas fa-undo"></i>
-						<p>{{ __('Logout') }}</p>
-					</a>
-					<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-						@csrf
-					</form>
-            	</li>   
+                        <i class="fas fa-undo"></i>
+                        <p>{{ __('Logout') }}</p>
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </li>
             </ul>
         </div>
     </div>

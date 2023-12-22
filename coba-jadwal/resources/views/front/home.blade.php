@@ -68,10 +68,6 @@
         </div>
     </div>
 </div>
-<!-- Latest News End -->
 
-<style>
-   
-</style>
 
 @endsection

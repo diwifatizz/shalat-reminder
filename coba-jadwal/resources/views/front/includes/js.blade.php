@@ -86,3 +86,90 @@
 </b:if>
 
 
+// asmaul husna
+<script>
+window.onload = function () {
+  getDataAsma();
+};
+
+const asmaApi = 'https://api.aladhan.com/v1/asmaAlHusna';
+function getDataAsma() {
+  fetch(asmaApi)
+    .then(function (response) {
+      //error dari server
+      if (!response.ok) {
+        throw new Error("Waduh! Gagal ambil data nih 🙀");
+      }
+      return response.json();
+    })
+    .then(function (asma) {
+      displayDataAsma(asma);
+    })
+    .catch(function (error) {
+      console.log("Terjadi kesalahan", error);
+    });
+}
+
+function displayDataAsma(asma) {
+  var resultDiv = document.getElementById("result-asma");
+  resultDiv.innerHTML = "";
+
+  asma.data.forEach(function (asmaa) {
+    var asmaulDiv = document.createElement("div");
+    asmaulDiv.className = "card";
+
+    var asmaDiv = document.createElement("div");
+    asmaDiv.classList.add("imgBx");
+
+    var numberSpan = document.createElement("span");
+    numberSpan.textContent = asmaa.number;
+    
+    asmaDiv.appendChild(numberSpan);
+
+    var contentBx = document.createElement("div");
+    contentBx.className = "contentBx";
+
+    var h2 = document.createElement("h2");
+    h2.textContent = asmaa.name;
+
+    var size = document.createElement("div");
+    size.className = "size";
+
+    var sizeH3 = document.createElement("h4");
+    sizeH3.textContent = asmaa.transliteration;
+
+    size.appendChild(sizeH3);
+
+    var color = document.createElement("div");
+    color.className = "color";
+
+    var colorH3 = document.createElement("h3");
+    colorH3.textContent = asmaa.en.meaning;
+
+    color.appendChild(colorH3);
+
+    contentBx.appendChild(h2);
+    contentBx.appendChild(size);
+    contentBx.appendChild(color);
+
+    asmaulDiv.appendChild(asmaDiv);
+    asmaulDiv.appendChild(contentBx);
+
+    resultDiv.appendChild(asmaulDiv);
+  });
+}
+
+//menu-icon
+let menuIcon = document.querySelector("#menu-icon");
+let navbar = document.querySelector(".navbar");
+
+menuIcon.onclick = () => {
+  menuIcon.classList.toggle("bx-x");
+  navbar.classList.toggle("active");
+};
+
+window.onscroll = () => {
+  menuIcon.classList.remove("bx-x");
+  navbar.classList.remove("active");
+};
+</script>
