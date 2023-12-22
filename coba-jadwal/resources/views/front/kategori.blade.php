@@ -5,11 +5,11 @@
 <div class="container-fluid populer-news py-5">
     <div class="container py-5">
         <form action="{{ route('detail-page')}}" method="GET" class="mb-4">
-            <div class="input-group">
-                <input type="search" name="search" class="form-control" placeholder="Cari artikel..." value="{{ request('search') }}">
-                <button type="submit" class="btn-search btn border border-primary btn-md-square bg-white my-auto">
-                    <i class="fas fa-search text-primary"></i>
-                </button>
+            <div class="search-box">
+                <input type="search" name="search" class="search-text" placeholder="Cari artikel..." value="{{ request('search') }}">
+                <a href="#" class = "search-btn">
+                    <i class="fas fa-search"></i>
+                </a>
             </div>
         </form>
         <div class="tab-class mb-4">
