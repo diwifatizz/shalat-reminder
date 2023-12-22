@@ -61,7 +61,7 @@
            
 
             <div class="card-body">
-                <div class="table-responsive">
+                <div class="table-responsive" style="overflow-x: auto;">
                     <table id="example1" class="table">
                         <thead class="table-primary">
                             <tr>
