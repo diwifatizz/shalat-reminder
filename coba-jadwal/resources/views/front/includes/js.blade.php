@@ -86,7 +86,7 @@
 </b:if>
 
 
-// asmaul husna
+
 <script>
 window.onload = function () {
   getDataAsma();

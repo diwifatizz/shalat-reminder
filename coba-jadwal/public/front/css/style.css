@@ -513,7 +513,7 @@
 }
 /* and Asmaul Dashboard   */
 
-section {
+.section-shalat section {
     background: var(--bg-color);
     min-height: 80vh;
 }
@@ -543,7 +543,7 @@ section {
     padding: 20px;
 }
 
-.card {
+.container-shalat .card {
     border-radius: 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
