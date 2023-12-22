@@ -39,10 +39,16 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="gambar">Gambar Artikel</label>
-                            <input type="file" name="gambar_artikel" class="form-control">
-                        </div>
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <a class="btn btn-light" data-input="gambar_artikel" data-preview="holder" onclick="openFileManager()">
+                                    Pilih Gambar
+                                </a>
+                            </span>
+                            <input id="thumbnail" class="form-control" type="text" name="filepath">
+                          </div>
+                          <img id="holder" style="margin-top:15px;max-height:100px;">
+         
                         <div class="form-group">
                             <label for="status">Status</label>
                             <select name="is_active" class="form-control">
@@ -65,18 +71,26 @@
 
 {{-- file manage --}}
 <script>
-    var options = {
-      filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-      filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
-      filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-      filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
-    };
+    function openFileManager() {
+        window.open('/laravel-filemanager?type=Images', 'FileManager', 'width=900,height=600');
+    }
+
+    // Fungsi ini akan dipanggil oleh Laravel File Manager setelah pemilihan file
+    function SetFileField(file_path) {
+        document.getElementById('gambar_artikel').value = file_path;
+    }
 </script>
 
 <script>
+    var options = {
+        filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+        filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+        filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+        filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token=',
+    };
+
     CKEDITOR.replace('editor', options);
 </script>
-
 
 
 @endsection

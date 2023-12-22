@@ -17,6 +17,7 @@
 <div class="page-inner mt--5">
 	<div class="row">
 		<div class="col-sm-6 col-md-3">
+			<a href="{{ url('/user') }}">
 			<div class="card card-stats card-round">
 				<div class="card-body ">
 					<div class="row align-items-center">
@@ -36,6 +37,7 @@
 			</div>
 		</div>
 		<div class="col-sm-6 col-md-3">
+			<a href="{{ url('/artikel') }}">
 			<div class="card card-stats card-round">
 				<div class="card-body">
 					<div class="row align-items-center">
