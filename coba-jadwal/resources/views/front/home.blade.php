@@ -4,7 +4,6 @@
 
 @include('front.includes.slide')
 
-
 <section id="home-section">
     <div class="home-content">
         <div class="dalil-home">
@@ -72,7 +71,7 @@
 <!-- Latest News End -->
 
 <style>
-
+   
 </style>
 
 @endsection
