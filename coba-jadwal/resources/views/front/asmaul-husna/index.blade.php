@@ -2,13 +2,10 @@
 
 @section('content')
 
-
 <section id="section-asma">
     <h1>Asma'ul Husna</h1>
     <div id="result-asma"></div>
 </section>
-
-
 
   <script>
     // asmaul husna
