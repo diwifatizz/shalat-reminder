@@ -2,62 +2,6 @@
 
 @section('content')
 
-<style>
-/* Asmaul Husna */
-
-#section-asma {
-    padding: 2rem 5% 5rem;
-    text-align: center;
-}
-
-#result-asma {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.container-asma {
-    width: 15rem;
-    height: 14rem;
-    margin: auto auto 10px auto;
-    border-radius: 20px;
-    box-shadow: 0 15px 30px rgba(13, 13, 13, 0.086);
-    border: none;
-    background-color: rgb(211, 240, 252);
-    padding: 25px;
-    display: grid;
-    align-items: center;
-    transition: .5s ease;
-}
-
-.container-asma:hover {
-    transform: scale(1.05);
-}
-
-.namaAsmaul {
-    color: var(--purple-color);
-    margin-bottom: .1rem;
-    display: block;
-    align-items: center;
-}
-
-.transAsmaul {
-    display: block;
-    align-items: center;
-}
-
-/* Menambahkan aturan media query untuk tampilan mobile */
-@media screen and (max-width: 768px) {
-    #result-asma {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .container-asma {
-        width: 100%;
-    }
-}
-</style>
 
 <section id="section-asma">
     <h1>Asma'ul Husna</h1>

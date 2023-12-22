@@ -38,9 +38,9 @@
                     </div>
                     <button type="submit">Log in</button>
 
-                    <div class="register">
+                    {{-- <div class="register">
                         <p>Don't have an account? <a href="{{ route('register') }} ">Register</a></p>
-                    </div>
+                    </div> --}}
                 </form>
             </div>
         </div>
