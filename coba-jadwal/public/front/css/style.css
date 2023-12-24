@@ -593,7 +593,7 @@ tbody tr td:first-child {
     color: white;
 }
 
-.card-footer {
+.container-shalat .card-footer {
     background: var(--second-color);
     border-radius: 0 0 30px 30px;
     color: #f0ecf4;
@@ -602,7 +602,7 @@ tbody tr td:first-child {
     line-height: 20px;
 }
 
-.card-header form {
+.container-shalat .card-header form {
     display: flex;
     align-items: center;
     justify-content: center;
