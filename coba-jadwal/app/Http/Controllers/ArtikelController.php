@@ -19,6 +19,18 @@ class ArtikelController extends Controller
     {
         $artikel = Artikel::all();
 
+        // Mendapatkan role dari user yang sedang masuk
+        $level = Auth::user()->level;
+
+        // Jika user adalah admin, tampilkan semua artikel
+        if ($level == 'admin') {
+            $artikel = Artikel::all();
+        } else {
+            // Jika user adalah penulis, tampilkan hanya artikel yang ditulis oleh penulis tersebut
+            $penulisId = Auth::user()->id;
+            $artikel = Artikel::where('user_id', $penulisId)->get();
+        }
+
         return view('back.artikel.index', [
             'artikel' => $artikel
         ]);
