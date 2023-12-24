@@ -35,10 +35,8 @@
     <link href="{{ asset('front/css/slider.css') }}" rel="stylesheet">
     <!-- Content -->
     <link href="{{ asset('front/css/content.css') }}" rel="stylesheet">
-    <!-- Content -->
+    <!-- Asmaul Husna -->
     <link href="{{ asset('front/css/asmaul.css') }}" rel="stylesheet">
-
-
 
 </head>
 

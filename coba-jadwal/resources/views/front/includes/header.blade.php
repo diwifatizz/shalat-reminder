@@ -1,19 +1,13 @@
-<div class="container-fluid bg-light embed-responsive">
+<div class="container-fluid bg-light">
     <div class="container px-0">
-        <nav class="navbar navbar-expand-xl navbar-light bg-transparent">
+        <nav class="navbar navbar-expand-xl navbar-light ">
             <div class="collapse navbar-collapse bg-transparent py-3" id="navbarCollapse">
-                <div class="col-md-2">
+                <div class="col-2">
                 <div class="konten">
                     <div class="konten__container">
                         <p class="konten__container__text">
-                            <img src="{{ asset('front/img/logo.png') }}" alt="Deskripsi Gambar" style="width: 50px;">
+                            <img src="{{ asset('front/img/logo.png') }}" alt="Deskripsi Gambar" style="width: 50px;">Shalat Reminder
                         </p>
-                        <ul class="konten__container__list">
-                            <li class="konten__container__list__item">A r t i k e l</li>
-                            <li class="konten__container__list__item">Jam Sholat</li>
-                            <li class="konten__container__list__item">Asmaul-Husna</li>
-                            <li class="konten__container__list__item">SholatReminder</li>
-                        </ul>
                     </div>
                 </div>
                 </div>

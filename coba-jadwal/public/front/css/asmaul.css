@@ -9,7 +9,7 @@
     gap: 1.5rem;
 }
 
-.card {
+#section-asma .card {
     position: relative;
     width: 200px;
     height: 270px;
@@ -18,7 +18,7 @@
     overflow: hidden;
     margin: auto;
 }
-.card:before {
+#section-asma .card:before {
     content: "";
     position: absolute;
     top: 0;
@@ -29,11 +29,11 @@
     clip-path: circle(100px at 80% 20%);
     transition: 0.5s ease-in-out;
 }
-.card:hover:before {
+#section-asma .card:hover:before {
     clip-path: circle(200px at 80% -20%);
 }
 
-.card:after {
+#section-asma .card:after {
     content: "ٱللَّهِ";
     position: absolute;
     top: 30%;
@@ -44,7 +44,7 @@
     color: rgba(253, 254, 255, 0.04);
 }
 
-.card .imgBx {
+#section-asma .card .imgBx {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -53,12 +53,12 @@
     height: 100%;
     transition: 0.5s;
 }
-.card:hover .imgBx {
+#section-asma .card:hover .imgBx {
     top: 0%;
     transform: translateY(-40%);
     /* bug */
 }
-.card .imgBx span {
+#section-asma .card .imgBx span {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -66,7 +66,7 @@
     font-size: 3em;
     color: #fff;
 }
-.card .contentBx {
+#section-asma .card .contentBx {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -75,17 +75,17 @@
     transition: 1s;
     z-index: 90;
 }
-.card:hover .contentBx {
+#section-asma .card:hover .contentBx {
     height: 210px;
 }
-.card .contentBx h2 {
+#section-asma .card .contentBx h2 {
     position: relative;
     font-weight: 600;
     letter-spacing: 1px;
     color: #fff;
 }
-.card .contentBx .size,
-.card .contentBx .color {
+#section-asma .card .contentBx .size,
+#section-asma .card .contentBx .color {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,18 +94,18 @@
     opacity: 0;
     visibility: hidden;
 }
-.card:hover .contentBx .size {
+#section-asma .card:hover .contentBx .size {
     opacity: 1;
     visibility: visible;
     transition-delay: 0.5s;
 }
-.card:hover .contentBx .color {
+#section-asma .card:hover .contentBx .color {
     opacity: 1;
     visibility: visible;
     transition-delay: 0.6s;
 }
-.card .contentBx .size h3,
-.card .contentBx .color h3 {
+#section-asma .card .contentBx .size h3,
+#section-asma .card .contentBx .color h3 {
     color: white;
     font-weight: 300;
     font-size: 14px;
@@ -113,7 +113,7 @@
     letter-spacing: 2px;
     margin-right: 10px;
 }
-.card .contentBx .size span {
+#section-asma .card .contentBx .size span {
     width: 26px;
     height: 26px;
     text-align: center;
@@ -128,11 +128,11 @@
     border-radius: 4px;
     cursor: pointer;
 }
-.card:hover .contentBx .size span:hover {
+#section-asma .card:hover .contentBx .size span:hover {
     /* other bug */
     background: #b90000;
 }
-.card .contentBx .color span {
+#section-asma .card .contentBx .color span {
     width: 20px;
     height: 20px;
     background: #ff0;
@@ -140,16 +140,16 @@
     margin: 0 5px;
     cursor: pointer;
 }
-.card .contentBx .color span:nth-child(2) {
+#section-asma .card .contentBx .color span:nth-child(2) {
     background: #1bbfe9;
 }
-.card .contentBx .color span:nth-child(3) {
+#section-asma .card .contentBx .color span:nth-child(3) {
     background: #1b2fe9;
 }
-.card .contentBx .color span:nth-child(4) {
+#section-asma .card .contentBx .color span:nth-child(4) {
     background: #080481;
 }
-.card .transAsmaul .contentBx a {
+#section-asma .card .transAsmaul .contentBx a {
     display: inline-block;
     padding: 10px 20px;
     background: #fff;
@@ -162,7 +162,7 @@
     transform: translateY(50px);
     transition: 0.5s;
 }
-.card:hover .transAsmaul .contentBx a {
+#section-asma .card:hover .transAsmaul .contentBx a {
     opacity: 1;
     transform: translateY(0px);
     transition-delay: 0.7s;
