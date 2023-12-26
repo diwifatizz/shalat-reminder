@@ -59,4 +59,4 @@ apa hayo
 
 ## ERD
 
-link dari google docs/drive
+https://drive.google.com/file/d/1AfEg_0w1QmJbHXnJm6rMD1fpC_dOvaxA/view?usp=sharing
