@@ -3,11 +3,16 @@
 @section('content')
 
 <div class="panel-header bg-primary-gradient">
-    <div class="page-inner py-5">
-        <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
-
-        </div>
-    </div>
+	<div class="page-inner py-5">
+		<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+			<div>
+				<h2 class="text-white pb-2 fw-bold">Tabel iklan</h2>
+				<h5 class="text-white op-7 mb-2"></h5>
+			</div>
+			<div class="ml-md-auto py-2 py-md-0">
+			</div>
+		</div>
+	</div>
 </div>
 <div class="page-inner mt--5">
     <div class="row">
@@ -29,7 +34,7 @@
                         <table id="example1" class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Nomor</th>
+                                    <th>No</th>
                                     <th>Judul Iklan</th>
                                     <th>Link</th>
                                     <th>Gambar Slide</th>
@@ -52,7 +57,7 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{ route ('iklan.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-pencil"></i> Edit</a>
+                                        <a href="{{ route ('iklan.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-pen"></i></a>
 
                                         {{-- <form action="{{ route ('iklan.destroy', $row->id) }}" method="POST" class="d-inline">
                                             @csrf

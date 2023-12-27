@@ -28,15 +28,11 @@
     });
 </script>
 
-<script>
-    $(function () {
-    $("#example1").DataTable();
-    });
-</script>
+@yield('script')
 
 
 <!-- Bootstrap Notify -->
-<script src="{{ asset('back/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
+{{-- <script src="{{ asset('back/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script> --}}
 
 <!-- jQuery Vector Maps -->
 <script src="{{ asset('back/js/plugin/jqvmap/jquery.vmap.min.js')}}"></script>
@@ -45,17 +41,17 @@
 <!-- Sweet Alert -->
 <script src="{{ asset('back/js/plugin/sweetalert/sweetalert.min.js')}}"></script>
 
-<!-- Atlantis JS 
- <script src="{{ asset('back/js/atlantis.min.js')}}"></script>
-
- Atlantis DEMO methods, don't include it in your project! 
+{{-- Atlantis JS  --}}
+<script src="{{ asset('back/js/atlantis.min.js')}}"></script>
+{{-- 
+ Atlantis DEMO methods, don't include it in your project!  --}}
 <script src="{{ asset('back/js/setting-demo.js')}}"></script>
 <script src="{{ asset('back/js/demo.js')}}"></script>
 <script>
     Circles.create({
         id:'circles-1',
         radius:45,
-        value:60,
+        value:60, 
         maxValue:100,
         width:7,
         text: 5,
@@ -143,7 +139,7 @@
         lineWidth: '2',
         lineColor: '#ffa534',
         fillColor: 'rgba(255, 165, 52, .14)'
-    }); -->
+    }); 
 </script>
 
 

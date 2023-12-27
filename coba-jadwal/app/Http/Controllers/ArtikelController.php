@@ -51,26 +51,38 @@ class ArtikelController extends Controller
      */
     public function store(Request $request)
     {
+        // Validasi form
         $this->validate($request, [
             'judul' => 'required',
-            'is_active' => 'required', // Pastikan status diisi
+            'gambar_artikel' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'is_active' => 'required',
         ]);
 
-        $data = $request->all();
-        $data['slug'] = Str::slug($request->judul);
-        $data['user_id'] = Auth::id();
-        $data['views'] = 0;
-        $data['gambar_artikel'] = $request->file('gambar_artikel')->store('artikel');
+        // Menyiapkan data artikel
+        $data = [
+            'judul' => $request->judul,
+            'slug' => Str::slug($request->judul),
+            'body' => $request->body,
+            'kategori_id' => $request->kategori_id,
+            'is_active' => $request->is_active,
+            'user_id' => Auth::id(),
+            'views' => 0,
+        ];
 
+        // Memproses file gambar
+        if ($request->hasFile('gambar_artikel')) {
+            $data['gambar_artikel'] = $request->file('gambar_artikel')->store('artikel');
+        }
 
-        // Set status artikel dari dropdown
-        $data['is_active'] = $request->input('is_active');
-
+        // Menyimpan data artikel ke database
         Artikel::create($data);
 
+        // Menampilkan pesan sukses dan mengarahkan kembali ke halaman index
         Alert::success('Success', 'Data berhasil ditambahkan');
         return redirect()->route('artikel.index');
     }
+
+
 
     /**
      * Display the specified resource.

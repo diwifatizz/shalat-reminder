@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\kategori;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use App\Models\Province;

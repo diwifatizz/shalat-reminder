@@ -1,4 +1,5 @@
 <div class="container-fluid bg-light">
+<div class="container-fluid bg-light">
     <div class="container px-0">
         <nav class="navbar navbar-expand-xl navbar-light ">
             <div class="collapse navbar-collapse bg-transparent py-3" id="navbarCollapse">
@@ -40,4 +41,5 @@
             </div>
         </nav>
     </div>
+</div>
 </div>
