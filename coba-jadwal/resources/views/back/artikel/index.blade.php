@@ -3,11 +3,16 @@
 @section('content')
 
 <div class="panel-header bg-primary-gradient">
-    <div class="page-inner py-5">
-        <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
-
-        </div>
-    </div>
+	<div class="page-inner py-5">
+		<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+			<div>
+				<h2 class="text-white pb-2 fw-bold">Tabel artikel</h2>
+				<h5 class="text-white op-7 mb-2">Halaman untuk {{ Auth::user()->level }}</h5>
+			</div>
+			<div class="ml-md-auto py-2 py-md-0">
+			</div>
+		</div>
+	</div>
 </div>
 <div class="page-inner mt--5">
     <div class="row">
@@ -29,7 +34,7 @@
                         <table id="example1" class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Nomor</th>
+                                    <th>No</th>
                                     <th>ID</th>
                                     <th>Nama Artikel</th>
                                     <th>Slug</th>
@@ -82,4 +87,5 @@
         </div>
     </div>
 </div>
+
 @endsection

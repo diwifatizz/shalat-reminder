@@ -91,18 +91,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-8">
-                                            <div class="features-content d-flex flex-column">
-                                                <p class="text-uppercase mb-2">{{ $artikel->kategori->nama_kategori }}</p>
-                                                <a href="#" class="h6">
-                                                    <a href="{{ route('detail-artikel', $artikel->slug) }}" class="h6">
-
-                                                    {{ $artikel->judul }}
-                                                </a>
-                                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> {{\Carbon\Carbon::parse($artikel->created_at)->isoFormat('dddd, D MMMM Y')}}</small>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
+                                </div>
+                                <div class="col-lg-12"><br>
+                                    <a href="{{ route('detail-page') }}" class="link-hover btn border border-primary rounded-pill text-dark w-100 py-3 mb-4">View More</a>
                                 </div>
                             </div>
                         </div>

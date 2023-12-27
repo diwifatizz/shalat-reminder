@@ -4,6 +4,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Halaman master {{ Auth::user()->level }}</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+	@yield('meta')
 	<link rel="icon" href="{{  asset('back/img/icon.ico')}}" type="image/x-icon"/>
 
 	<!-- Fonts and icons -->
@@ -21,6 +22,8 @@
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="{{ asset('back/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('back/css/atlantis.min.css') }}">
+	 <!-- Template Stylesheet -->
+	 <link href="{{ asset('front/css/style.css') }}" rel="stylesheet">
 
 	
 

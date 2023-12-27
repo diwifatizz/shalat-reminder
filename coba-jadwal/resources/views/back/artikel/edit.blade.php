@@ -55,7 +55,22 @@
                             </select>
                         </div> 
 
-                        <div class="form-group">
+
+                        {{-- <div class="form-group">
+                            <label for="gambar">Gambar artikel</label>
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <a id="lfm" data-input="thumbnail"  value="{{ $artikel->gambar_artikel }}"  data-preview="holder" class="btn btn-light">
+                                        <i class="fa fa-picture-o"></i>pilih gambar 
+                                    </a>
+                                </span>
+                                <input id="thumbnail" class="form-control" type="text" name="gambar_artikel">
+                            </div>
+                        </div>
+                        <img id="holder" style="margin-top:15px;max-height:100px;"> --}}
+
+
+                         <div class="form-group">
                             <label for="gambar_artikel">Gambar Artikel </label>
                             <div class="input-group">
                                 <input type="text" name="gambar_artikel" id="gambar_artikel" class="form-control" value="{{ $artikel->gambar_artikel }}" readonly>
@@ -69,6 +84,7 @@
                             <label for="gambar_artikel">Gambar Saat ini </label> <br>
                             <img src="{{ asset('uploads/'. $artikel->gambar_artikel) }}" alt="" width="150">
                         </div>
+                        
                         <div class="form-group">
                             <button class="btn btn-primary " type="submit">Save</button>
                             <button class="btn btn-danger " type="reset">Reset</button>
@@ -80,30 +96,28 @@
     </div>
 </div>
 
+@endsection
 
-<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+@section('script')
+    <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+    <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
 
-{{-- file manage --}}
-<script>
-    function openFileManager() {
-        window.open('/laravel-filemanager?type=Images', 'FileManager', 'width=900,height=600');
-    }
+    <script>
+        $(document).ready(function () {
+            // Laravel File Manager script
+            $('#lfm').filemanager('image', {
+                prefix: '/laravel-filemanager'
+            });
 
-    // Fungsi ini akan dipanggil oleh Laravel File Manager setelah pemilihan file
-    function SetFileField(file_path) {
-        document.getElementById('gambar_artikel').value = file_path;
-    }
-</script>
+            // CKEditor script
+            var options = {
+                filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+                filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+                filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+                filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token=',
+            };
 
-<script>
-    var options = {
-        filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-        filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
-        filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-        filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token=',
-    };
-
-    CKEDITOR.replace('editor', options);
-</script>
-
+            CKEDITOR.replace('editor', options);
+        });
+    </script>
 @endsection
