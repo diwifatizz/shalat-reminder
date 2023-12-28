@@ -36,8 +36,6 @@
                                         {{-- pagination --}}
                                         <div class="d-flex justify-content-end">   {{ $artikelByKategori->links() }}
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div>

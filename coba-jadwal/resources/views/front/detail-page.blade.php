@@ -16,7 +16,7 @@
             <div class="mt-5 lifestyle">  
                 <div class="border-bottom mb-4">
                     <h3 class="mb-4">Artikel Terkini</h3>
-                </div>
+                </div>  
                 <div class="row g-4">
                     <div class="col-lg-12">
                         <div class="tab-content">
@@ -25,7 +25,7 @@
                                     <div class="row g-4">
                                         @foreach ($artikel as $singleArtikel)
                                         <div class="col-3">
-                                            <img src="{{ asset($singleArtikel->gambar_artikel) }}" class="img-fluid w-100 rounded" alt="" height="100" style="object-fit: cover; height: your_desired_height; width: your_desired_width;">
+                                            <img src="{{ asset($singleArtikel->gambar_artikel) }}" class="img-fluid w-100 rounded" alt="" height="100">
                                         </div>
                                         <div class="col-9">
                                             <h3>{{ $singleArtikel->judul }}</h3>
