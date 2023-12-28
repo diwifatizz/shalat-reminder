@@ -15,7 +15,7 @@
         <div class="tab-class mb-4">
             <div class="mt-5 lifestyle">  
                 <div class="border-bottom mb-4">
-                    <h3 class="mb-4">Artikel Terkini</h3>
+                    <h3 class="mb-4">Kumpulan Artikel</h3>
                 </div>  
                 <div class="row g-4">
                     <div class="col-lg-12">
@@ -29,7 +29,7 @@
                                         </div>
                                         <div class="col-9">
                                             <h3>{{ $singleArtikel->judul }}</h3>
-                                            <p class="mb-0">{!! \Illuminate\Support\Str::limit($singleArtikel->body, 200) !!} </p>
+                                            <p class="mb-0">{!! \Illuminate\Support\Str::limit($singleArtikel->body, 200) !!}</p>
                                             <a href="{{ route('detail-artikel', $singleArtikel->slug) }}">Selengkapnya</a>
                                         </div>
                                         @endforeach

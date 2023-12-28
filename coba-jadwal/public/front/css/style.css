@@ -513,6 +513,335 @@
 }
 /* and Asmaul Dashboard   */
 
+/* Menambahkan tampilan mobile untuk home */
+@media screen and (max-width: 768px) {
+    #result-asma {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .container-asma {
+        width: 100%;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Epilogue", sans-serif;
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 100%;
+    }
+    .home-img {
+        display: flex;
+        position: relative;
+    }
+    .img-full {
+        width: 60vw;
+    }
+    #result-asma {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .container-surah {
+        width: 20rem;
+    }
+}
+
+@media (max-width: 911px) {
+    html {
+        font-size: 80%;
+    }
+    .header {
+        padding: 2rem 5%;
+    }
+    section {
+        padding: 8rem 3% 2rem;
+    }
+    #jadwal-dash,
+    #asmaul-dash,
+    #surah-dash {
+        gap: 5rem;
+    }
+    .jadwal-img img,
+    .asmaul-img img,
+    .surah-img img {
+        width: 45vw;
+    }
+    .container-surah {
+        width: 18rem;
+    }
+    .footer {
+        padding: 2rem 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+        margin-top: 1rem;
+    }
+    .hr-dash {
+        width: 25rem;
+    }
+    #result-surah {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .container-surah {
+        width: 24rem;
+    }
+
+    #home-section {
+        margin-top: 8rem;
+        flex-direction: column;
+        padding: 8rem 9% 0;
+    }
+    .home-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .home-content .p-dash {
+        font-size: 1.5rem;
+    }
+
+    .img-full {
+        display: none;
+    }
+    .img-mobile {
+        width: 90vw;
+        display: block;
+    }
+    #section-asma {
+        padding: 12rem 9% 5rem;
+    }
+    #result-asma {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #section-shalat {
+        padding: 10rem 9% 5rem;
+    }
+    #section-surah {
+        padding: 12rem 9% 5rem;
+    }
+    .footer-text {
+        font-size: 1.2rem;
+        color: white;
+    }
+}
+
+@media (max-width: 617px) {
+    html {
+        font-size: 80%;
+    }
+    #section-shalat {
+        padding: 10rem 5% 5rem;
+    }
+    #jadwal-dash,
+    #asmaul-dash,
+    #surah-dash {
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+    .jadwal-img img,
+    .asmaul-img img,
+    .surah-img img {
+        width: 60vw;
+    }
+
+    #section-shalat {
+        font-size: 85%;
+    }
+
+    .card-footer {
+        line-height: 15px;
+        font-size: 0.8rem;
+    }
+    #result-asma {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .container-asma {
+        width: 18rem;
+        height: 12rem;
+    }
+    .container-surah {
+        width: 18rem;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 75%;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        text-align: center;
+        margin-top: 2rem;
+    }
+    #section-shalat {
+        font-size: 96%;
+    }
+    .table th,
+    .table td {
+        text-align: center;
+        padding: 8px 5px;
+    }
+    tbody tr td:first-child {
+        width: 85px;
+    }
+    .container-asma {
+        width: 15rem;
+        height: 15rem;
+    }
+    .container-surah {
+        width: 15rem;
+    }
+    .card-footer {
+        line-height: 15px;
+        font-size: 1rem;
+    }
+}
+
+/* css untuk tampilan mobile untuk jadwal sholat */
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+        margin-top: 1rem;
+    }
+    .hr-dash {
+        width: 25rem;
+    }
+    #result-surah {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .container-surah {
+        width: 24rem;
+    }
+
+    #home-section {
+        margin-top: 8rem;
+        flex-direction: column;
+        padding: 8rem 9% 0;
+    }
+    .home-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .home-content .p-dash {
+        font-size: 1.5rem;
+    }
+
+    .img-full {
+        display: none;
+    }
+    .img-mobile {
+        width: 90vw;
+        display: block;
+    }
+    #section-asma {
+        padding: 12rem 9% 5rem;
+    }
+    #result-asma {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #section-shalat {
+        padding: 10rem 9% 5rem;
+    }
+    #section-surah {
+        padding: 12rem 9% 5rem;
+    }
+    .footer-text {
+        font-size: 1.2rem;
+        color: white;
+    }
+}
+
+@media (max-width: 617px) {
+    html {
+        font-size: 80%;
+    }
+    #section-shalat {
+        padding: 10rem 5% 5rem;
+    }
+    #jadwal-dash,
+    #asmaul-dash,
+    #surah-dash {
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+    .jadwal-img img,
+    .asmaul-img img,
+    .surah-img img {
+        width: 60vw;
+    }
+
+    #section-shalat {
+        font-size: 85%;
+    }
+
+    .card-footer {
+        line-height: 15px;
+        font-size: 0.8rem;
+    }
+    #result-asma {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .container-asma {
+        width: 18rem;
+        height: 12rem;
+    }
+    .container-surah {
+        width: 18rem;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 75%;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        text-align: center;
+        margin-top: 2rem;
+    }
+    #section-shalat {
+        font-size: 96%;
+    }
+    .table th,
+    .table td {
+        text-align: center;
+        padding: 8px 5px;
+    }
+    tbody tr td:first-child {
+        width: 85px;
+    }
+    .container-asma {
+        width: 15rem;
+        height: 15rem;
+    }
+    .container-surah {
+        width: 15rem;
+    }
+    .card-footer {
+        line-height: 15px;
+        font-size: 1rem;
+    }
+}
+
 .section-shalat section {
     background: var(--bg-color);
     min-height: 80vh;
@@ -525,7 +854,7 @@
     margin-top: 1rem;
     margin-bottom: 1.5rem;
     font-size: 2rem;
-    /* color: #2979ff; */
+    color: #2979ff;
 }
 .pjadwal {
     color: #f0ecf4;

@@ -40,10 +40,36 @@
     </div>
 </section>
 
+
+<!-- Banner Start -->
+<div class="container-fluid py-5 my-5"style="background: #f0e9f7;">
+    <div class="container">
+        @forelse ($artikel->sortByDesc('created_at')->take(1) as $row)
+        <div class="row g-4 align-items-center">
+            <div class="col-lg-7">
+                <h1 class="mb-4 text-dark">Artikel Terbaru</h1>
+                <h2 class="mb-4">{{ $row->judul }}</h2>
+                <p class="text-dark mb-4 pb-2">{!! \Illuminate\Support\Str::limit($row->body, 150   ) !!}
+                    <a href="{{ route('detail-artikel', $row->slug) }}">Selengkapnya</a>
+                </p>
+            </div>
+            <div class="col-lg-5">
+                <div class="rounded">
+                    <img src="{{ asset($row->gambar_artikel) }}" class="img-fluid rounded w-100 rounded" alt="banner">
+                </div>
+            </div>
+        </div>
+        @empty
+            <p>Tidak ada Artikel</p>
+        @endforelse
+    </div>
+</div>  
+<!-- Banner End -->
+
 <!-- Latest News Start -->
 <div class="container-fluid latest-news py-5">
     <div class="container py-5">
-        <h2 class="mb-4">Daftar Artikel</h2>
+        <h2 class="mb-4 text-dark">Daftar Artikel Terbaru</h2>
         <div class="latest-news-carousel owl-carousel">
             @forelse ($artikel as $row)
             <div class="latest-news-item">
