@@ -59,4 +59,4 @@ apa hayo
 
 ## ERD
 
-https://drive.google.com/file/d/1AfEg_0w1QmJbHXnJm6rMD1fpC_dOvaxA/view?usp=sharing
+https://drive.google.com/file/d/1m2tWer8d-4zSjKAwWEf8T-s5EYjXJuNm/view?usp=sharing
