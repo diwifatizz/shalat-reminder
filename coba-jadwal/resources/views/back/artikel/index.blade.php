@@ -35,7 +35,6 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>ID</th>
                                     <th>Nama Artikel</th>
                                     <th>Slug</th>
                                     <th>Kategori</th>
@@ -47,39 +46,40 @@
                             </thead>
                             <tbody>
                                 @forelse ($artikel as $key => $row)
-                                <tr>
-                                    <td>{{ $key + 1 }}</td>
-                                    <td>{{ $row -> id }}</td>
-                                    <td>{{ $row -> judul }}</td>
-                                    <td>{{ $row -> slug }}</td>
-                                    <td>{{ $row -> kategori->nama_kategori }}</td>
-                                    <td>{{ $row -> users->name }}</td>
-                                    <td>
-                                        @if ($row->is_active == '1')
-                                        Active
-                                        @else
-                                        Draft
-                                        @endif
-                                    </td>
-                                    <td> <img src="{{ asset('uploads/'. $row->gambar_artikel) }}" alt="" width="150"></td>
-                                    <td>
-                                        <a href="{{ route ('artikel.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-pen"></i></a>
-
-                                        <form action="{{ route ('artikel.destroy', $row->id) }}" method="POST" class="d-inline">
-                                            @csrf
-                                            @method('delete')
-                                            <button class="btn btn-danger btn-sm ">
-                                                <i class="fa fa-trash"></i>
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td>{{ $key + 1 }}</td>
+                                        <td>{{ $row->judul }}</td>
+                                        <td>{{ $row->slug }}</td>
+                                        <td>{{ $row->kategori ? $row->kategori->nama_kategori : 'N/A' }}</td>
+                                        <td>{{ $row->users ? $row->users->name : 'not available' }}</td>
+                                        <!-- Periksa apakah relasi pengguna ada sebelum mengakses propertinya -->
+                                        <td>
+                                            @if ($row->is_active == '1')
+                                                Active
+                                            @else
+                                                Draft
+                                            @endif
+                                        </td>
+                                        <td><img src="{{ asset($row->gambar_artikel) }}" alt="" width="150"></td>
+                                        <td>
+                                            <a href="{{ route('artikel.edit', $row->id) }}" class="btn btn-warning btn-sm">
+                                                <i class="fas fa-pen"></i>
+                                            </a>
+                                            <form action="{{ route('artikel.destroy', $row->id) }}" method="POST" class="d-inline">
+                                                @csrf
+                                                @method('delete')
+                                                <button class="btn btn-danger btn-sm">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
                                 @empty
-                                <tr>
-                                    <td colspan="8" class="text-center">Data Masih Kosong</td>
-                                </tr>
+                                    <tr>
+                                        <td colspan="8" class="text-center">Data Masih Kosong</td>
+                                    </tr>
                                 @endforelse
-                            </tbody>
+                            </tbody>                            
                         </table>
                     </div>
                 </div>

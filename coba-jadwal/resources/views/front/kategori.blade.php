@@ -11,7 +11,7 @@
                     <i class="fas fa-search"></i>
                 </a>
             </div>
-        </form>
+        </form>  
         <div class="tab-class mb-4">
             <div class="mt-5 lifestyle">
                 <div class="border-bottom mb-4">
@@ -25,7 +25,7 @@
                                     <div class="row g-4">
                                         @foreach ($artikelByKategori as $artikel)
                                         <div class="col-3">
-                                            <img src="{{ asset('uploads/'. $artikel->gambar_artikel ) }}" class="img-fluid w-100 rounded" alt="">
+                                            <img src="{{ asset($artikel->gambar_artikel ) }}" class="img-fluid w-100 rounded" alt="">
                                         </div>
                                         <div class="col-9">
                                             <h3>{{ $artikel->judul }}</h3>

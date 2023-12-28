@@ -39,13 +39,27 @@
                             </select>
                         </div>
 
+                        <!-- Form create/edit -->
                         <div class="form-group">
-                            <label for="gambar">Gambar Iklan </label>
-                            <input type="file" name="gambar_iklan" class="form-control">
-                            <br>
-                            <label for="gambar">Gambar Saat ini </label> <br>
-                            <img src="{{ asset('uploads/'. $iklan->gambar_iklan) }}" alt="" width="150">
+                            <label for="gambar">Gambar iklan</label>
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-light">
+                                        <i class="fa fa-picture-o"></i>Pilih gambar
+                                    </a>
+                                </span>
+                                <input id="thumbnail" class="form-control" type="text" name="gambar_iklan">
+                            </div>
                         </div>
+                        <img id="holder" style="margin-top:15px;max-height:100px;">
+
+                        <!-- Logika untuk menentukan apakah gambar ada atau tidak di database -->
+                        @if ($iklan->gambar_iklan)
+                        <div class="form-group">
+                            <label for="existing-image">Gambar saat ini</label>
+                            <img src="{{ asset($iklan->gambar_iklan) }}" alt="Existing Image" style="max-height: 100px;">
+                        </div>
+                        @endif
                         <div class="form-group">
                             <button class="btn btn-primary " type="submit">Save</button>
                             <button class="btn btn-danger " type="reset">Reset</button>
@@ -57,4 +71,16 @@
     </div>
 </div>
 
+@endsection
+
+@section('script')
+
+<script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+
+<script>
+    $('#lfm').filemanager('image', {
+        prefix: '/laravel-filemanager'
+    });
+</script>
+    
 @endsection

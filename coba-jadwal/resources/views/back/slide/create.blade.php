@@ -32,8 +32,15 @@
                         </div>
                        
                         <div class="form-group">
-                            <label for="gambar">Gambar  </label>
-                            <input type="file" name="gambar_slide" class="form-control">
+                            <label for="gambar">Gambar slide</label>
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-light">
+                                        <i class="fa fa-picture-o"></i>pilih gambar
+                                    </a>
+                                </span>
+                                <input id="thumbnail" class="form-control" type="text" name="gambar_slide">
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="status">Status </label>
@@ -53,4 +60,14 @@
     </div>
 </div>
 
+@endsection
+
+@section('script')
+    <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+
+    <script>
+        $('#lfm').filemanager('image', {
+            prefix: '/laravel-filemanager'
+        });
+    </script>
 @endsection

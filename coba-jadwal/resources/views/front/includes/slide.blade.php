@@ -1,7 +1,7 @@
 <div class="slider">
   @foreach ($slide as $key => $row)
     <div class="slide {{ $key == 0 ? 'current' : '' }}">
-      <img src="{{ asset('uploads/'. $row->gambar_slide ) }}" alt="">
+      <img src="{{ asset($row->gambar_slide ) }}" alt="">
       <div class="content">
         <h3>{{ $row->judul_slide }}</h3>
         <p>{{ $row->link }}</p>

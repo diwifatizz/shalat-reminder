@@ -17,46 +17,26 @@
 <div class="page-inner mt--5">
 	<div class="row">
 		<div class="col-sm-6 col-md-3">
-			<a href="{{ url('/user') }}">
-			<div class="card card-stats card-round">
-				<div class="card-body ">
-					<div class="row align-items-center">
-						<div class="col-icon">
-							<div class="icon-big text-center icon-primary bubble-shadow-small">
-								<i class="fas fa-users"></i>
-							</div>
-						</div>
-						<div class="col col-stats ml-3 ml-sm-0">
-							<div class="numbers">
-								<p class="card-category">User</p>
-								<h4 class="card-title">{{ $imut }}</h4>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-6 col-md-3">
 			<a href="{{ url('/artikel') }}">
-			<div class="card card-stats card-round">
-				<div class="card-body">
-					<div class="row align-items-center">
-						<div class="col-icon">
-							<div class="icon-big text-center icon-info bubble-shadow-small">
-								<i class="far fa-newspaper"></i>
+				<div class="card card-stats card-round">
+					<div class="card-body">
+						<div class="row align-items-center">
+							<div class="col-icon">
+								<div class="icon-big text-center icon-info bubble-shadow-small">
+									<i class="far fa-newspaper"></i>
+								</div>
 							</div>
-						</div>
-						<div class="col col-stats ml-3 ml-sm-0">
-							<div class="numbers">
-								<p class="card-category">Artikel</p>
-								<h4 class="card-title">{{ $artikel }}</h4>
+							<div class="col col-stats ml-3 ml-sm-0">
+								<div class="numbers">
+									<p class="card-category">Artikel</p>
+									<h4 class="card-title">{{ $artikel }}</h4>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 		</div>
-
+		@if (Auth::user()->level == 'admin')
 		<div class="col-sm-6 col-md-3">
 			<a href="{{ url('/kategori') }}">
 				<div class="card card-stats card-round">
@@ -99,6 +79,28 @@
 				</div>
 			</a>
 		</div>
+		<div class="col-sm-6 col-md-3">
+			<a href="{{ url('/user') }}">
+				<div class="card card-stats card-round">
+					<div class="card-body ">
+						<div class="row align-items-center">
+							<div class="col-icon">
+								<div class="icon-big text-center icon-primary bubble-shadow-small">
+									<i class="fas fa-users"></i>
+								</div>
+							</div>
+							<div class="col col-stats ml-3 ml-sm-0">
+								<div class="numbers">
+									<p class="card-category">User</p>
+									<h4 class="card-title">{{ $imut }}</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+		@endif
 	</div>
 </div>
 @endsection

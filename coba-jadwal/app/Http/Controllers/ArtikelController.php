@@ -17,24 +17,23 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        $artikel = Artikel::all();
-
         // Mendapatkan role dari user yang sedang masuk
         $level = Auth::user()->level;
 
-        // Jika user adalah admin, tampilkan semua artikel
+        // Jika user adalah admin, tampilkan semua artikel dari semua penulis
         if ($level == 'admin') {
             $artikel = Artikel::all();
         } else {
-            // Jika user adalah penulis, tampilkan hanya artikel yang ditulis oleh penulis tersebut
+            // Jika user adalah penulis, tampilkan artikel yang ditulis oleh penulis tersebut
             $penulisId = Auth::user()->id;
-            $artikel = Artikel::where('user_id', $penulisId)->get();
+            $artikel = Artikel::where('user_id', $penulisId)->orWhereDoesntHave('users')->get();
         }
 
         return view('back.artikel.index', [
             'artikel' => $artikel
         ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -54,25 +53,22 @@ class ArtikelController extends Controller
         // Validasi form
         $this->validate($request, [
             'judul' => 'required',
-            'gambar_artikel' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambar_artikel' => 'required',
             'is_active' => 'required',
         ]);
 
-        // Menyiapkan data artikel
+
         $data = [
             'judul' => $request->judul,
             'slug' => Str::slug($request->judul),
             'body' => $request->body,
             'kategori_id' => $request->kategori_id,
+            'gambar_artikel' => $request->gambar_artikel,
             'is_active' => $request->is_active,
             'user_id' => Auth::id(),
             'views' => 0,
         ];
 
-        // Memproses file gambar
-        if ($request->hasFile('gambar_artikel')) {
-            $data['gambar_artikel'] = $request->file('gambar_artikel')->store('artikel');
-        }
 
         // Menyimpan data artikel ke database
         Artikel::create($data);
@@ -110,44 +106,28 @@ class ArtikelController extends Controller
     /**
      * Update the specified resource in storage.
      */
-
     public function update(Request $request, string $id)
     {
-        // $this->validate($request, [
-        //     'judul' => 'required'
-        // ]);
+        $this->validate($request, [
+            'judul' => 'required',
+            'gambar_artikel' => 'required',
+        ]);
 
-        if (empty($request->file('gambar_artikel'))) {
-            $artikel = Artikel::find($id);
-            $artikel->update([
-                'judul' => $request->judul,
-                'body' => $request->body,
-                'slug' => Str::slug($request->judul),
-                'kategori_id' => $request->kategori_id,
-                'is_active' => $request->is_active,
-                'user_id' => Auth::id(),
+        $artikel = Artikel::find($id);
 
-            ]);
+        // Update data artikel
+        $artikel->update([
+            'judul' => $request->judul,
+            'body' => $request->body,
+            'slug' => Str::slug($request->judul),
+            'kategori_id' => $request->kategori_id,
+            'gambar_artikel' => $request->gambar_artikel,
+            'is_active' => $request->is_active,
+            'user_id' => Auth::id(),
+        ]);
 
-            Alert::warning('Success', 'Data berhasil diupdate');
-            return redirect()->route('artikel.index');
-        } else {
-            $artikel = Artikel::find($id);
-            Storage::delete($artikel->gambar_artikel);
-            $artikel->update([
-                'judul' => $request->judul,
-                'body' => $request->body,
-                'slug' => Str::slug($request->judul),
-                'kategori_id' => $request->kategori_id,
-                'is_active' => $request->is_active,
-                'user_id' => Auth::id(),
-
-                'gambar_artikel' => $request->file('gambar_artikel')->store('artikel'),
-            ]);
-
-            Alert::warning('Success', 'Data berhasil diupdate');
-            return redirect()->route('artikel.index');
-        }
+        Alert::warning('Success', 'Data berhasil diupdate');
+        return redirect()->route('artikel.index');
     }
 
     /**
