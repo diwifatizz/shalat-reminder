@@ -142,7 +142,7 @@ class ArtikelController extends Controller
         $artikel->delete();
 
 
-        Alert::error('Success', 'Data berhasil dihapus');
+        Alert::success('Success', 'Data berhasil dihapus');
         return redirect()->route('artikel.index');
     }
 }

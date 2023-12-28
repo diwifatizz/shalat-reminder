@@ -48,7 +48,7 @@
                                         <i class="fa fa-picture-o"></i>Pilih gambar
                                     </a>
                                 </span>
-                                <input id="thumbnail" class="form-control" type="text" name="gambar_iklan">
+                                <input id="thumbnail" class="form-control" type="text" name="gambar_iklan" value="{{ asset($iklan->gambar_iklan) }}">
                             </div>
                         </div>
                         <img id="holder" style="margin-top:15px;max-height:100px;">
