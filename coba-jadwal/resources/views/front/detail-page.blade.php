@@ -25,7 +25,7 @@
                                     <div class="row g-4">
                                         @foreach ($artikel as $singleArtikel)
                                         <div class="col-3">
-                                            <img src="{{ asset( $singleArtikel->gambar_artikel ) }}" class="img-fluid w-100 rounded" alt="">
+                                            <img src="{{ asset($singleArtikel->gambar_artikel) }}" class="img-fluid w-100 rounded" alt="" height="100" style="object-fit: cover; height: your_desired_height; width: your_desired_width;">
                                         </div>
                                         <div class="col-9">
                                             <h3>{{ $singleArtikel->judul }}</h3>

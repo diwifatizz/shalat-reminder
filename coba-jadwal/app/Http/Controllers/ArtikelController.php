@@ -17,24 +17,23 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        $artikel = Artikel::all();
-
         // Mendapatkan role dari user yang sedang masuk
         $level = Auth::user()->level;
 
-        // Jika user adalah admin, tampilkan semua artikel
+        // Jika user adalah admin, tampilkan semua artikel dari semua penulis
         if ($level == 'admin') {
             $artikel = Artikel::all();
         } else {
-            // Jika user adalah penulis, tampilkan hanya artikel yang ditulis oleh penulis tersebut
+            // Jika user adalah penulis, tampilkan artikel yang ditulis oleh penulis tersebut
             $penulisId = Auth::user()->id;
-            $artikel = Artikel::where('user_id', $penulisId)->get();
+            $artikel = Artikel::where('user_id', $penulisId)->orWhereDoesntHave('users')->get();
         }
 
         return view('back.artikel.index', [
             'artikel' => $artikel
         ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -111,7 +110,7 @@ class ArtikelController extends Controller
     {
         $this->validate($request, [
             'judul' => 'required',
-            'gambar_artikel' => 'required', 
+            'gambar_artikel' => 'required',
         ]);
 
         $artikel = Artikel::find($id);
