@@ -56,7 +56,7 @@
                     </a>
                 </li>
 
-                @if (Auth::user()->level == 'admin')
+               
                 <li class="nav-item">
                     <a href="{{ route('slide.index') }}">
                         <i class="fas fa-image"></i>
@@ -71,7 +71,7 @@
                     </a>
                 </li>
              
-
+                @if (Auth::user()->level == 'admin')
                 <li class="nav-item">
                     <a href="{{ route('kategori.index') }}">
                         <i class="fas fa-desktop"></i>
