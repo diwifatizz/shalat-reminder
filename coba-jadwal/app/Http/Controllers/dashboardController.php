@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Artikel;
 use App\Models\Iklan;
 use App\Models\kategori;
+use App\Models\Slide;
 
 class dashboardController extends Controller
 {
@@ -19,7 +20,8 @@ class dashboardController extends Controller
         $artikel = Artikel::count();
         $kategori = kategori::count();
         $iklan = Iklan::count();
-        return view('back.dashboard', compact('imut', 'artikel', 'kategori', 'iklan'));
+        $slide = Slide::count();
+        return view('back.dashboard', compact('imut', 'artikel', 'kategori', 'iklan', 'slide'));
     }
 
     /**
