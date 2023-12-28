@@ -35,7 +35,6 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>ID</th>
                                     <th>HR</th>
                                     <th>Hadist</th>
                                     <th>Status</th>
@@ -47,7 +46,6 @@
                                 @forelse ($slide as $key => $row)
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
-                                    <td>{{ $row -> id }}</td>
                                     <td>{{ $row -> judul_slide }}</td>
                                     <td>{{ $row -> link }}</td>
                                  
@@ -60,7 +58,7 @@
                                     </td>
                                     <td> 
                                         
-                                        <img src="{{ asset('uploads/'. $row->gambar_slide) }}" alt="" width="100">
+                                        <img src="{{ asset($row->gambar_slide) }}" alt="" width="100">
                                     
                                     </td>
                                     <td>

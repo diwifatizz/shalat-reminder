@@ -35,7 +35,6 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>ID</th>
                                     <th>Nama Artikel</th>
                                     <th>Slug</th>
                                     <th>Kategori</th>
@@ -49,7 +48,6 @@
                                 @forelse ($artikel as $key => $row)
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
-                                    <td>{{ $row -> id }}</td>
                                     <td>{{ $row -> judul }}</td>
                                     <td>{{ $row -> slug }}</td>
                                     <td>{{ $row -> kategori->nama_kategori }}</td>
@@ -61,7 +59,7 @@
                                         Draft
                                         @endif
                                     </td>
-                                    <td> <img src="{{ asset('uploads/'. $row->gambar_artikel) }}" alt="" width="150"></td>
+                                    <td> <img src="{{ asset($row->gambar_artikel) }}" alt="" width="150"></td>
                                     <td>
                                         <a href="{{ route ('artikel.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-pen"></i></a>
 

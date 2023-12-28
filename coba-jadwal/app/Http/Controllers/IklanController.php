@@ -70,7 +70,7 @@ class IklanController extends Controller
     {
         $this->validate($request, [
             'judul' => 'required',
-            'gambar_iklan' => 'mimes:png,jpg,jpeg,gif,bmp'
+            'gambar_iklan' => 'required'
         ]);
 
         if (empty($request->file('gambar_iklan'))) {
@@ -79,6 +79,7 @@ class IklanController extends Controller
                 'judul' => $request->judul,
                 'link' => $request->link,
                 'status' => $request->status,
+                'gambar_iklan' => $request->gambar_iklan,
             ]);
 
             Alert::warning('Success', 'Data Berhasil Diupdate');
@@ -90,7 +91,7 @@ class IklanController extends Controller
                 'judul' => $request->judul,
                 'link' => $request->link,
                 'status' => $request->status,
-                'gambar_iklan' => $request->file('gambar_iklan')->store('iklan'),
+                'gambar_iklan' => $request->gambar_iklan,
             ]);
 
             Alert::warning('Success', 'Data Berhasil Diupdate');

@@ -34,29 +34,24 @@ class SlideController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'judul_slide' => 'required|min:4',
-            'gambar_slide' => 'mimes:png,jpg,jpeg,gif,bmp'
+            'judul_slide' => 'required',
+            'link' => 'required',
+            'gambar_slide' => 'required',
+            'status' => 'required',
 
         ]);
 
-        if (!empty($request->file('gambar_slide'))) {
-            $data = $request->all();
-            $data['gambar_slide'] = $request->file('gambar_slide')->store('slide');
+        $slide = [
+            'judul_slide' => $request->judul_slide,
+            'link' => $request->link,
+            'gambar_slide' => $request->gambar_slide,
+            'status' => $request->status,
+        ];
 
-            Slide::create($data);
+        Slide::create($slide);
 
-
-            Alert::warning('Success', 'Data berhasil ditambahkan');
-            return redirect()->route('slide.index');
-        } else {
-
-            $data = $request->all();
-            Slide::create($data);
-
-
-            Alert::warning('Success', 'Data berhasil ditambahkan');
-            return redirect()->route('slide.index');
-        }
+        Alert::warning('Success', 'Data berhasil ditambahkan');
+        return redirect()->route('slide.index');
     }
 
     /**

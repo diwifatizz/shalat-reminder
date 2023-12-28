@@ -35,55 +35,49 @@
                             <label for="kategori">Kategori </label>
 
                             <select name="kategori_id" class="form-control">
-                                @foreach ($kategori as $row)    
+                                @foreach ($kategori as $row)
                                 @if ($row->id == $artikel->kategori_id)
-                                <option value={{ $row->id }} selected = 'selected' >{{ $row->nama_kategori }}</option>
+                                <option value={{ $row->id }} selected='selected'>{{ $row->nama_kategori }}</option>
                                 @else
                                 <option value="{{ $row->id }}">
-                                    {{ $row->nama_kategori }}</option>
+                                    {{ $row->nama_kategori }}
+                                </option>
                                 @endif
-                                
-                                
+
+
                                 @endforeach
                             </select>
                         </div>
-                         <div class="form-group">
+                        <div class="form-group">
                             <label for="status">Status </label>
                             <select name="is_active" class="form-control">
                                 <option value="1" {{ $artikel->is_active ==  '1' ? 'selected' : '' }}>Publish</option>
                                 <option value="0" {{ $artikel->is_active ==  '0' ? 'selected' : '' }}>Draft</option>
                             </select>
-                        </div> 
+                        </div>
 
 
-                        {{-- <div class="form-group">
+                        <!-- Form create/edit -->
+                        <div class="form-group">
                             <label for="gambar">Gambar artikel</label>
                             <div class="input-group">
                                 <span class="input-group-btn">
-                                    <a id="lfm" data-input="thumbnail"  value="{{ $artikel->gambar_artikel }}"  data-preview="holder" class="btn btn-light">
-                                        <i class="fa fa-picture-o"></i>pilih gambar 
+                                    <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-light">
+                                        <i class="fa fa-picture-o"></i>Pilih gambar
                                     </a>
                                 </span>
                                 <input id="thumbnail" class="form-control" type="text" name="gambar_artikel">
                             </div>
                         </div>
-                        <img id="holder" style="margin-top:15px;max-height:100px;"> --}}
+                        <img id="holder" style="margin-top:15px;max-height:100px;">
 
-
-                         <div class="form-group">
-                            <label for="gambar_artikel">Gambar Artikel </label>
-                            <div class="input-group">
-                                <input type="text" name="gambar_artikel" id="gambar_artikel" class="form-control" value="{{ $artikel->gambar_artikel }}" readonly>
-                                <span class="input-group-btn">
-                                    <a class="btn btn-light" data-input="gambar_artikel" data-preview="holder" onclick="openFileManager()">
-                                        Pilih Gambar
-                                    </a>
-                                </span>
-                            </div>
-                            <br>
-                            <label for="gambar_artikel">Gambar Saat ini </label> <br>
-                            <img src="{{ asset('uploads/'. $artikel->gambar_artikel) }}" alt="" width="150">
+                        <!-- Logika untuk menentukan apakah gambar ada atau tidak di database -->
+                        @if ($artikel->gambar_artikel)
+                        <div class="form-group">
+                            <label for="existing-image">Gambar saat ini</label>
+                            <img src="{{ asset($artikel->gambar_artikel) }}" alt="Existing Image" style="max-height: 100px;">
                         </div>
+                        @endif
                         
                         <div class="form-group">
                             <button class="btn btn-primary " type="submit">Save</button>
@@ -99,25 +93,25 @@
 @endsection
 
 @section('script')
-    <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
-    <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+<script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
 
-    <script>
-        $(document).ready(function () {
-            // Laravel File Manager script
-            $('#lfm').filemanager('image', {
-                prefix: '/laravel-filemanager'
-            });
-
-            // CKEditor script
-            var options = {
-                filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-                filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
-                filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-                filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token=',
-            };
-
-            CKEDITOR.replace('editor', options);
+<script>
+    $(document).ready(function() {
+        // Laravel File Manager script
+        $('#lfm').filemanager('image', {
+            prefix: '/laravel-filemanager'
         });
-    </script>
+
+        // CKEditor script
+        var options = {
+            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token=',
+        };
+
+        CKEDITOR.replace('editor', options);
+    });
+</script>
 @endsection

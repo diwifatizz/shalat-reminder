@@ -43,13 +43,13 @@
 <!-- Latest News Start -->
 <div class="container-fluid latest-news py-5">
     <div class="container py-5">
-        <h2 class="mb-4">Latest News</h2>
+        <h2 class="mb-4">Daftar Artikel</h2>
         <div class="latest-news-carousel owl-carousel">
             @forelse ($artikel as $row)
             <div class="latest-news-item">
                 <div class="bg-light rounded">
                     <div class="rounded-top overflow-hidden">
-                        <img src="{{ asset('uploads/'. $row->gambar_artikel ) }}" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                        <img src="{{ asset($row->gambar_artikel) }}" alt="" width="350" height="220">
                     </div>
                     <div class="d-flex flex-column p-4">
                         {{-- tooltip untuk menampilkan seluruh teks saat pengguna mengarahkan kursor ke elemen --}}

@@ -38,7 +38,7 @@
 					<table id="example1" class="table table-bordered">
                         <thead>
                             <tr>
-                                <th> id</th>
+                                <th> No</th>
                                 <th> Nama kategori</th>
                                 <th> Slug</th>
                                 <th> action</th>
@@ -46,10 +46,10 @@
                         </thead>
 
                         <tbody>
-                            @forelse ($kategori as $row)
+                            @forelse ($kategori as $key => $row)
 
                             <tr>
-                                <td>{{ $row->id }}</td>
+                                <td>{{ $key + 1 }}</td>
                                 <td>{{ $row->nama_kategori }}</td>
                                 <td>{{ $row->slug }}</td>
                                 <td>

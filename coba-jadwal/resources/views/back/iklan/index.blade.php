@@ -21,7 +21,7 @@
                 <div class="card-header">
                     <div class="card-head-row">
                         <div class="card-title">Data Iklan</div>
-                        <a href="{{ route ('iklan.create') }}" class="btn btn-primary ml-auto"> <i class="fas fa-plus"></i> Tambah Iklan</a>
+                        {{-- <a href="{{ route ('iklan.create') }}" class="btn btn-primary ml-auto"> <i class="fas fa-plus"></i> Tambah Iklan</a> --}}
                     </div>
                 </div>
                 <div class="card-body">
@@ -48,7 +48,7 @@
                                     <td>{{ $key + 1 }}</td>
                                     <td>{{ $row -> judul }}</td>
                                     <td>{{ $row -> link }}</td>
-                                    <td> <img src="{{ asset('uploads/'. $row->gambar_iklan) }}" width="150"></td>
+                                    <td> <img src="{{ asset($row->gambar_iklan) }}" width="150"></td>
                                     <td>
                                         @if ($row->status == '1')
                                         Active
@@ -58,14 +58,6 @@
                                     </td>
                                     <td>
                                         <a href="{{ route ('iklan.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-pen"></i></a>
-
-                                        {{-- <form action="{{ route ('iklan.destroy', $row->id) }}" method="POST" class="d-inline">
-                                            @csrf
-                                            @method('delete')
-                                            <button class="btn btn-danger btn-sm ">
-                                                <i class="fa fa-trash"></i>
-                                            </button>
-                                            </form> --}}
                                     </td>
                                 </tr>
                                 @empty

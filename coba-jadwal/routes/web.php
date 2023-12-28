@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\ArtikelController;
@@ -25,23 +24,18 @@ use App\Http\Controllers\userController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
+//Tampilan awal 
 route::get('/', [FrontendController::class, 'index'])->name('index');
 
 route::get('detail-artikel/{slug}', [FrontendController::class, 'detail'])->name('detail-artikel');
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+// Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/detail-page', [FrontendController::class, 'article'])->name('detail-page');
 
 Route::get('/detail-page/{category}', [FrontendController::class, 'categories'])->name('detail-cat');
 
 Route::get('/notfound', [FrontendController::class, 'notfound'])->name('notfound');
-
-Route::get('/detail-page/{category}', [FrontendController::class, 'categories'])->name('detail-cat');
 
 Route::get('/kategori/{slug}', [FrontendController::class, 'kategori'])->name('kategori');
 
@@ -84,8 +78,3 @@ Route::post('/getKabupatenJadwalShalat', [JadwalShalatController::class, 'getKab
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
-
-// Route::get('/fetch-and-save-cities', [CityController::class, 'fetchAndSaveCities']);
-
-// Route::get('/fetch-data/{id_lokasi}/{tahun}/{bulan}', [SholatController::class, 'fetchDataAndSaveToDatabase']);
-// Route::put('/artikel/update-status/{artikel}', [ArtikelController::class, 'updateStatus'])->name('artikel.update-status');

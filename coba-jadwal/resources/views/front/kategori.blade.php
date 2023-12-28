@@ -5,13 +5,13 @@
 <div class="container-fluid populer-news py-5">
     <div class="container py-5">
         <form action="{{ route('detail-page')}}" method="GET" class="mb-4">
-            <div class="input-group">
-                <input type="search" name="search" class="form-control" placeholder="Cari artikel..." value="{{ request('search') }}">
-                <button type="submit" class="btn-search btn border border-primary btn-md-square bg-white my-auto">
-                    <i class="fas fa-search text-primary"></i>
-                </button>
+            <div class="search-box">
+                <input type="search" name="search" class="search-text" placeholder="Cari artikel..." value="{{ request('search') }}">
+                <a href="#" class = "search-btn">
+                    <i class="fas fa-search"></i>
+                </a>
             </div>
-        </form>
+        </form>  
         <div class="tab-class mb-4">
             <div class="mt-5 lifestyle">
                 <div class="border-bottom mb-4">
@@ -25,7 +25,7 @@
                                     <div class="row g-4">
                                         @foreach ($artikelByKategori as $artikel)
                                         <div class="col-3">
-                                            <img src="{{ asset('uploads/'. $artikel->gambar_artikel ) }}" class="img-fluid w-100 rounded" alt="">
+                                            <img src="{{ asset($artikel->gambar_artikel ) }}" class="img-fluid w-100 rounded" alt="">
                                         </div>
                                         <div class="col-9">
                                             <h3>{{ $artikel->judul }}</h3>

@@ -9,10 +9,14 @@
         <div class="row g-4">
             <div class="col-lg-8">
                 <div class="mb-4">
-                    <a href="#" class="h1 display-5">{{ $artikel->judul }}.</a>
+                    <a href="#" class="h1 display-5" style="max-width: 200px; white-space: normal; word-wrap: break-word;">
+                        {{ $artikel->judul }}
+                    </a>
                 </div>
+                
+                
                 <div class="position-relative rounded overflow-hidden mb-3">
-                    <img src="{{ asset('uploads/' . $artikel->gambar_artikel) }}" class="img-zoomin img-fluid rounded w-100" alt="">
+                    <img src="{{ asset($artikel->gambar_artikel) }}" class="img-zoomin img-fluid rounded w-100" alt="">
                     <div class="position-absolute text-white px-4 py-2 bg-primary rounded" style="top: 20px; right: 20px;">
                         {{ $artikel->kategori->nama_kategori }}
                     </div>
@@ -60,7 +64,7 @@
                                 <div class="col-lg-12">
                                     <div class="position-relative banner-2">
                                         @if($iklanA)
-                                            <img src="{{ asset('uploads/'. $iklanA->gambar_iklan) }}" class="img-fluid w-100 rounded" alt="">
+                                            <img src="{{ asset($iklanA->gambar_iklan) }}" class="img-fluid w-100 rounded" alt="">
                                             <div class="text-center banner-content-2">
                                                 <h6 class="mb-2">{{ $iklanA->judul }}</h6>
                                                 <a href="{{ $iklanA->link }}" class="btn btn-primary text-white px-4">View</a>
@@ -76,14 +80,14 @@
                                                 <div class="col-4">
                                                     <div class="rounded-circle position-relative">
                                                         <div class="overflow-hidden rounded-circle">
-                                                            <img src="{{ asset('uploads/' . $artikel->gambar_artikel) }}" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                                            <img src="{{ asset($artikel->gambar_artikel) }}" class="img-zoomin img-fluid rounded-circle w-100" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-8">
                                                     <div class="features-content d-flex flex-column">
                                                         <p class="text-uppercase mb-2">{{ $artikel->kategori->nama_kategori }}</p>
-                                                        <a href="{{ route('detail-artikel', $artikel->slug) }}" class="h6">
+                                                        <a href="{{ route('detail-artikel', $artikel->slug) }}" class="h6" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
                                                             {{ $artikel->judul }}
                                                         </a>
                                                         <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> {{\Carbon\Carbon::parse($artikel->created_at)->isoFormat('dddd, D MMMM Y')}}</small>
