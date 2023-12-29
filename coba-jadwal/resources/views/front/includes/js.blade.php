@@ -121,11 +121,6 @@ function displayDataAsma(asma) {
     var asmaDiv = document.createElement("div");
     asmaDiv.classList.add("imgBx");
 
-    var numberSpan = document.createElement("span");
-    numberSpan.textContent = asmaa.number;
-    
-    asmaDiv.appendChild(numberSpan);
-
     var contentBx = document.createElement("div");
     contentBx.className = "contentBx";
 

@@ -2,7 +2,7 @@
     <div class="container px-0">
         <nav class="navbar navbar-expand-xl navbar-light bg-transparent">
             <a href="#" class="navbar-brand mt-3">
-                <p class="text-primary mb-6" style="line-height: 0; font-size:23px;">ShalatReminder.net</p>
+                <p class="text-primary mb-6" style="line-height: 0; font-size:23px;">Shalat Reminder</p>
                 <small class="text-body fw-normal" style="letter-spacing: 2px;">Jadwal-waktu-shalat dan artikel</small>
             </a>
             <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -14,15 +14,15 @@
                     </div>
                 </div>
                 <div class="navbar-nav mx-auto border-top">
-                    <a href="/" class="nav-item nav-link active">Home</a>
-                    <a href="{{ route('jadwalshalat.index') }}" class="nav-item nav-link">JadwalShalat</a>
-                    <a href="{{ route('detail-page') }}" class="nav-item nav-link">Artikel</a>
-                    <a href="{{ route('asmaul-husna.index') }}" class="nav-item nav-link">Asmaul-Husna</a>
+                    <a href="/" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a>
+                    <a href="{{ route('jadwalshalat.index') }}" class="nav-item nav-link {{ request()->is('jadwalshalat*') ? 'active' : '' }}">Jadwal Shalat</a>
+                    <a href="{{ route('detail-page') }}" class="nav-item nav-link {{ request()->is('detail-page') ? 'active' : '' }}">Artikel</a>
+                    <a href="{{ route('asmaul-husna.index') }}" class="nav-item nav-link {{ request()->is('asmaul-husna*') ? 'active' : '' }}">Asmaul-Husna</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Kategori</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @foreach ($category as $cat)
-                            <a class="dropdown-item" href="{{ route('kategori', $cat->slug) }}">{{ $cat->nama_kategori }}</a>
+                            <a class="dropdown-item" href="{{ route('kategori', $cat->slug) }} {{ request()->is('kategori/' . $cat->slug) ? 'active' : '' }}">{{ $cat->nama_kategori }}</a>
                             @endforeach
                         </div>
                     </div>

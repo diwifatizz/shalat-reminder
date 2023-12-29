@@ -61,7 +61,7 @@
                                 <div class="col-12">
                                     <iframe src="https://timesprayer.com/widgets.php?frame=1&amp;lang=en&amp;name=pekanbaru&amp;avachang=true&amp;time=0&amp;fcolor=7298A7&amp;tcolor=55707B&amp;frcolor=2B4E5B" style="border: none; overflow: hidden; width: 100%; height: 196px;"></iframe>
                                 </div>
-                                <div class="col-lg-12">
+                                {{-- <div class="col-lg-12">
                                     <div class="position-relative banner-2">
                                         @if($iklanA)
                                             <img src="{{ asset($iklanA->gambar_iklan) }}" class="img-fluid w-100 rounded" alt="">
@@ -69,6 +69,18 @@
                                                 <h6 class="mb-2">{{ $iklanA->judul }}</h6>
                                                 <a href="{{ $iklanA->link }}" class="btn btn-primary text-white px-4">View</a>
                                             </div>
+                                        @endif
+                                    </div>
+                                </div> --}}
+                                <div class="col-lg-12">
+                                    <div class="position-relative banner-2">
+                                        @if($iklanA)
+                                        <img src="{{ asset($iklanA->gambar_iklan) }}" class="img-fluid w-100 rounded" alt="">
+                                        <div class="text-center banner-content-2">
+                                            <h6 class="mb-2">{{ $iklanA->judul }}</h6>
+                                            <p class="text-white mb-2"></p>
+                                            <a href="{{ $iklanA->link }}" class="btn btn-primary text-white px-4">view</a>
+                                        </div>
                                         @endif
                                     </div>
                                 </div>

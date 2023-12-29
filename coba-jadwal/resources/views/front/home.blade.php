@@ -42,28 +42,24 @@
 
 
 <!-- Banner Start -->
-<div class="container-fluid py-5 my-5"style="background: #f0e9f7;">
+<div class="container-fluid py-5 my-5" style="background: #f0e9f7;">
     <div class="container">
-        @forelse ($artikel->sortByDesc('created_at')->take(1) as $row)
         <div class="row g-4 align-items-center">
             <div class="col-lg-7">
-                <h1 class="mb-4 text-dark">Artikel Terbaru</h1>
-                <h2 class="mb-4">{{ $row->judul }}</h2>
-                <p class="text-dark mb-4 pb-2">{!! \Illuminate\Support\Str::limit($row->body, 150   ) !!}
-                    <a href="{{ route('detail-artikel', $row->slug) }}">Selengkapnya</a>
-                </p>
+                <h1 class="mb-4 text-primary">Artikel</h1>
+                <h1 class="mb-4">Dapatkan Pembaruan Setiap Mingguan</h1>
+                <p class="text-dark mb-4 pb-2">nikmati beragam artikel informatif tentang Islam yang menginspirasi. Mulailah hari Anda dengan kebijaksanaan dan koneksi spiritual melalui ShalatReminder</p>
+                <div class="position-relative mx-auto">
+                </div>
             </div>
             <div class="col-lg-5">
                 <div class="rounded">
-                    <img src="{{ asset($row->gambar_artikel) }}" class="img-fluid rounded w-100 rounded" alt="banner">
+                    <img src="{{ asset ('front/img/banner-img.jpg') }}" class="img-fluid rounded w-100 rounded" alt="">
                 </div>
             </div>
         </div>
-        @empty
-            <p>Tidak ada Artikel</p>
-        @endforelse
     </div>
-</div>  
+</div>
 <!-- Banner End -->
 
 <!-- Latest News Start -->

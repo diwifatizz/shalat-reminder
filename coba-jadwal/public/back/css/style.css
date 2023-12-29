@@ -11,7 +11,7 @@ section {
     align-items: center;
     min-height: 100vh;
     width: 100%;
-    background: url("https://images.pexels.com/photos/1181325/pexels-photo-1181325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+    background: url("https://images.pexels.com/photos/2406731/pexels-photo-2406731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
         no-repeat;
     background-position: center;
     background-size: cover;
@@ -139,3 +139,4 @@ button {
 .register p a:hover {
     text-decoration: underline;
 }
+

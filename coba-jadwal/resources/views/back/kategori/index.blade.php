@@ -48,7 +48,7 @@
                         <tbody>
                             @forelse ($kategori as $key => $row)
 
-                            <tr>
+                              <tr>
                                 <td>{{ $key + 1 }}</td>
                                 <td>{{ $row->nama_kategori }}</td>
                                 <td>{{ $row->slug }}</td>
